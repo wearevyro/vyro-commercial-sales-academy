@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 5.2 — Marketing Channels &amp; Where Sponsorship Fits · VYRO Commercial Sales Academy</title>
+<meta name="description" content="VYRO Commercial Sales Academy — internal certification program for commercial partnerships professionals.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231B2A56%22/><text x=%2250%25%22 y=%2261%25%22 font-size=%2258%22 fill=%22%23FFFFFF%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22900%22>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F2F4F8; --gold-deep:#E7EAF1;
+  --cream:#FFFFFF; --cream-2:#EEF1F6; --cream-3:#E3E7EF;
+  --ink:#16213D; --ink-mute:rgba(22,33,61,0.64); --ink-faint:rgba(22,33,61,0.42);
+  --line:rgba(22,33,61,0.12); --line-strong:rgba(22,33,61,0.22);
+  --accent:#1B2A56; --accent-deep:#12203F; --accent-soft:rgba(27,42,86,0.08);
+  --success:#1E7A4C; --success-soft:rgba(30,122,76,0.1);
+  --danger:#B3392C; --danger-soft:rgba(179,57,44,0.1);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Anton', 'Archivo Black', sans-serif;
+  --font-badge: 'Baloo 2', 'Inter', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--gold);color:var(--ink);font-family:var(--font);}
+body{-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle at 8px 8px, rgba(255,255,255,0.35) 2px, transparent 2px);background-size:26px 26px;}
+a{color:inherit;text-decoration:none;}
+.frame{padding:14px;min-height:100vh;}
+.shell{display:flex;flex-direction:column;min-height:calc(100vh - 28px);background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(33,20,6,0.28);position:relative;}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 40px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--cream);font-family:var(--font-badge);font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 3px 0 var(--accent-deep);transform:rotate(-4deg);}
+.brand-text{font-family:var(--font-badge);font-size:15px;font-weight:800;letter-spacing:1.5px;line-height:1.5;color:var(--ink);}
+.brand-text small{font-size:10px;font-weight:600;letter-spacing:0.5px;color:var(--ink-mute);text-transform:none;font-family:var(--font);}
+
+.menu-toggle{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);border:none;padding:13px 22px;border-radius:30px;font-family:var(--font-badge);font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,0.35);cursor:pointer;transition:transform .12s;flex:none;}
+.menu-toggle:hover{transform:translateY(-1px);}
+.menu-toggle-icon{font-size:15px;line-height:1;}
+.menu-toggle-close{padding:0;width:42px;height:42px;justify-content:center;border-radius:12px;background:var(--cream-2);color:var(--ink);box-shadow:0 2px 0 var(--line-strong);}
+
+.sidebar{
+  width:100%;position:fixed;inset:0;z-index:60;background:var(--cream-3);
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;
+  transition:opacity .18s ease, visibility .18s ease;
+}
+.sidebar.open{opacity:1;visibility:visible;}
+body.menu-open{overflow:hidden;}
+.sidebar-inner{display:flex;flex-direction:column;height:100%;max-width:640px;margin:0 auto;width:100%;}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.sidebar-title{font-family:var(--font-display);font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.nav-scroll{overflow-y:auto;flex:1;padding:20px 28px 40px;}
+.nav-item{display:block;padding:9px 14px;border-radius:9px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.nav-item:hover{background:rgba(33,20,6,0.05);color:var(--ink);}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:700;transform:rotate(-1deg);box-shadow:0 2px 0 var(--accent-deep);}
+.nav-home{margin-bottom:14px;font-weight:800;color:var(--ink);font-family:var(--font-badge);letter-spacing:0.3px;font-size:14.5px;padding:11px 14px;background:var(--cream-2);border-radius:10px;}
+.nav-home.active{background:var(--accent);}
+.nav-group{margin-bottom:10px;background:var(--cream-2);border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+.nav-group[open]{border-color:var(--accent);box-shadow:0 3px 0 rgba(228,35,31,0.18);}
+.nav-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:13px;color:var(--ink-mute);user-select:none;}
+.nav-group summary::-webkit-details-marker{display:none;}
+.nav-group summary::after{content:"+";margin-left:auto;font-family:var(--font-display);font-size:16px;color:var(--ink-faint);}
+.nav-group[open] summary::after{content:"–";color:var(--accent);}
+.nav-group summary:hover{color:var(--ink);}
+.nav-group[open] summary{color:var(--ink);font-weight:700;}
+.nav-phase-num{font-family:var(--font-display);color:var(--accent);font-weight:400;font-size:19px;width:26px;flex:none;}
+.nav-phase-title{flex:1;line-height:1.3;font-family:var(--font-badge);font-weight:600;}
+.nav-items{padding:2px 14px 10px 48px;border-top:1px dashed var(--line-strong);margin-top:2px;padding-top:10px;}
+.nav-items .nav-item{font-size:12.5px;padding:7px 10px;}
+.content{flex:1;min-width:0;padding:56px 60px 100px;max-width:900px;margin:0 auto;width:100%;}
+.eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:16px;transform:rotate(-1.5deg);}
+.doc h1{font-family:var(--font-display);font-weight:400;letter-spacing:0.3px;font-size:38px;line-height:1.1;margin:0 0 22px;color:var(--ink);text-transform:uppercase;}
+.doc h2{font-family:var(--font-display);font-weight:400;font-size:23px;letter-spacing:0.2px;margin:44px 0 16px;padding-top:10px;border-top:2px dashed var(--line-strong);color:var(--ink);}
+.doc h2:first-of-type{border-top:none;padding-top:0;}
+.doc h3{font-size:17px;font-weight:700;margin:30px 0 10px;color:var(--ink);}
+.doc h4{font-size:13px;margin:22px 0 8px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
+.doc p{font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);margin:0 0 16px;}
+.doc strong{color:var(--ink);font-weight:700;}
+.doc em{color:rgba(33,20,6,0.75);}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:22px;font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);}
+.doc li{margin-bottom:6px;}
+.doc li p{margin-bottom:4px;}
+.doc hr{border:none;border-top:2px dashed var(--line-strong);margin:36px 0;}
+.doc code{font-family:'SF Mono',Consolas,monospace;font-size:13px;background:var(--cream-2);padding:2px 6px;border-radius:4px;color:var(--accent-deep);}
+.doc pre{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch;transition:mask-image .15s;}
+.doc pre code{background:none;padding:0;color:#E7EAF2;font-size:13px;line-height:1.6;}
+.doc pre.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:13.5px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--cream-2);border-radius:10px;}
+.doc table.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);}
+.doc th{text-align:left;color:var(--accent-deep);font-size:11px;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;padding:10px 14px;border-bottom:2px solid var(--line-strong);white-space:nowrap;}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--line);color:rgba(33,20,6,0.78);vertical-align:top;}
+.doc tr:hover td{background:rgba(228,35,31,0.04);}
+.doc blockquote{margin:0 0 20px;padding:4px 20px;border-left:3px solid var(--accent);color:var(--ink-mute);font-style:italic;}
+.doc a{color:var(--accent-deep);text-decoration:underline;text-decoration-color:rgba(228,35,31,0.4);}
+.pagenav{display:flex;justify-content:space-between;gap:20px;margin-top:60px;padding-top:28px;border-top:2px dashed var(--line-strong);}
+.pagenav-link{flex:1;padding:16px 18px;border:1px solid var(--line);border-radius:14px;transition:border-color .15s,transform .15s;background:var(--cream-2);}
+.pagenav-link:hover{border-color:var(--accent);transform:translateY(-2px);}
+.pagenav-link.next{text-align:right;}
+.pagenav-dir{display:block;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-weight:700;}
+.pagenav-title{display:block;font-size:14px;font-weight:700;color:var(--ink);}
+
+/* Quiz */
+.quiz{margin-top:56px;padding:36px 36px 32px;background:var(--cream-2);border:1px solid var(--line);border-radius:20px;}
+.quiz-head{margin-bottom:26px;}
+.quiz-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-title{font-family:var(--font-display);font-weight:400;font-size:24px;letter-spacing:0.2px;margin:0;color:var(--ink);}
+.quiz-questions{display:flex;flex-direction:column;gap:22px;}
+.quiz-q{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
+.quiz-q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.quiz-q-num{font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--accent);}
+.quiz-q-type{font-family:var(--font-badge);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);background:var(--cream-2);padding:3px 10px;border-radius:20px;}
+.quiz-q-text{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 16px;font-weight:600;}
+.quiz-options{display:flex;flex-direction:column;gap:8px;}
+.quiz-option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--cream);font-family:var(--font);font-size:14px;line-height:1.5;color:var(--ink-mute);cursor:pointer;transition:border-color .15s,background .15s;}
+.quiz-option:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft);}
+.quiz-option:disabled{cursor:default;}
+.quiz-option-letter{font-family:var(--font-badge);font-weight:700;color:var(--ink-faint);flex:none;}
+.quiz-option-text{flex:1;}
+.quiz-option.correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.correct .quiz-option-letter{color:var(--success);}
+.quiz-option.incorrect{border-color:var(--danger);background:var(--danger-soft);color:var(--ink);}
+.quiz-option.incorrect .quiz-option-letter{color:var(--danger);}
+.quiz-option.reveal-correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.reveal-correct .quiz-option-letter{color:var(--success);}
+.quiz-textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--font);font-size:14px;line-height:1.6;color:var(--ink);background:var(--cream);resize:vertical;margin-bottom:10px;}
+.quiz-textarea:focus{outline:none;border-color:var(--accent);}
+.quiz-reveal-btn{font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--accent);background:var(--accent-soft);border:none;padding:9px 16px;border-radius:20px;cursor:pointer;}
+.quiz-reveal-btn:hover{background:var(--accent);color:#fff;}
+.quiz-expected{margin-top:12px;padding:14px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;font-size:13.5px;line-height:1.6;color:var(--ink-mute);}
+.quiz-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed var(--line-strong);}
+.quiz-score{font-family:var(--font-badge);font-size:13px;font-weight:700;color:var(--ink);}
+.quiz-score-val{color:var(--accent);}
+.quiz-passing{font-size:12.5px;color:var(--ink-mute);}
+
+/* Home page */
+.hero{padding:8px 0 40px;position:relative;}
+.hero-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;transform:rotate(-1.5deg);}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:56px;line-height:1;margin:0 0 20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.hero p.lead{font-size:17px;line-height:1.6;color:var(--ink-mute);max-width:640px;margin:0 0 32px;}
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.stat{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:16px 22px;min-width:110px;}
+.stat .num{font-family:var(--font-display);font-weight:400;font-size:32px;color:var(--accent);line-height:1;}
+.stat .label{font-size:11px;color:var(--ink-mute);margin-top:6px;letter-spacing:0.5px;font-weight:700;text-transform:uppercase;}
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px;}
+.phase-card{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:var(--cream-2);transition:border-color .15s,transform .15s,box-shadow .15s;}
+.phase-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 0 rgba(33,20,6,0.06);}
+.phase-card .pn{display:inline-block;font-family:var(--font-badge);color:#fff;background:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-bottom:10px;transform:rotate(-2deg);}
+.phase-card .pt{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3;color:var(--ink);}
+.phase-card .pd{font-size:12.5px;color:var(--ink-mute);line-height:1.5;}
+
+@media (max-width: 900px){
+  .frame{padding:0;}
+  .shell{border-radius:0;min-height:100vh;box-shadow:none;}
+  .topbar{padding:16px 20px;}
+  .brand-text{font-size:12px;}
+  .menu-toggle{padding:11px 16px;font-size:11px;}
+  .sidebar-head{padding:18px 20px;}
+  .nav-scroll{padding:16px 20px 40px;}
+  .content{padding:36px 20px 70px;}
+  .doc h1{font-size:27px;}
+  .doc h2{font-size:20px;}
+  .nav-item{padding:14px 16px;font-size:16px;}
+  .nav-items{padding:2px 12px 12px 20px;}
+  .nav-items .nav-item{padding:12px 10px;font-size:14.5px;}
+  .nav-group summary{padding:15px 16px;font-size:15px;}
+  .nav-home{margin-bottom:10px;}
+  .pagenav{flex-direction:column;}
+  .stat-row{gap:10px;}
+  .stat{padding:12px 16px;min-width:90px;}
+  .hero h1{font-size:36px;}
+  .phase-grid{grid-template-columns:1fr;}
+  .quiz{padding:26px 20px 24px;}
+  .quiz-q{padding:16px 16px;}
+  .quiz-footer{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      <span class="brand-text">VYRO<br><small>Commercial Sales Academy</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">MENU <span class="menu-toggle-icon">☰</span></button>
+  </header>
+  <main class="content">
+    <div class="eyebrow">Phase 05 · Marketing</div>
+    <article class="doc"><h1>Lesson 5.2 — Marketing Channels &amp; Where Sponsorship Fits</h1>
+<hr>
+<h2>1. Lesson Overview</h2>
+<p>Lesson 5.1 taught you what brands are trying to achieve. This lesson teaches you the other half of a brand marketer&#39;s world: the channels they use to achieve it, and — the question that determines whether VYRO wins a marketing budget or loses it to something else — where sponsorship genuinely fits into that mix.</p>
+<p>Every sponsorship dollar competes against paid social, television and streaming advertising, search, influencer partnerships, content marketing, and other experiential/event spend. A VYRO employee who understands sponsorship in isolation, without understanding the channels it&#39;s competing against, will consistently struggle to win budget from a sophisticated marketing team. This lesson covers four channels with particular relevance to VYRO&#39;s work — Sports Marketing, Event Marketing, Influencer Marketing, and Content Marketing — and teaches you to position sponsorship credibly within the full channel landscape, using the CPM and ROI vocabulary from Phase 02.</p>
+<hr>
+<h2>2. Learning Objectives</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ol>
+<li>Describe the full landscape of marketing channels a brand typically allocates budget across, and where sponsorship sits within it.</li>
+<li>Define Sports Marketing, Event Marketing, Influencer Marketing, and Content Marketing, and distinguish each from sponsorship itself.</li>
+<li>Explain, using Phase 02&#39;s CPM and ROI vocabulary, how sponsorship&#39;s value is credibly compared against alternative channels.</li>
+<li>Build a &quot;blended channel&quot; pitch that combines sponsorship with at least one other channel to strengthen a proposal&#39;s overall value case.</li>
+<li>Correctly identify, for a real brand, which channels it already appears to be investing in, and reason about how a sponsorship proposal should be positioned relative to that existing mix.</li>
+</ol>
+<hr>
+<h2>3. Business Context</h2>
+<p>Marketing budgets are allocated competitively, often through formal internal processes that directly compare projected outcomes across channels. A brand&#39;s marketing team is rarely deciding &quot;should we do this sponsorship or nothing&quot; — they&#39;re deciding &quot;should we do this sponsorship or increase our paid social spend, or invest more in an existing influencer program.&quot; VYRO wins that comparison by understanding the alternatives well enough to make a credible, specific case for sponsorship&#39;s relative strengths, and by proposing blended approaches that combine sponsorship with complementary channels rather than treating sponsorship as a standalone, competing line item.</p>
+<hr>
+<h2>4. Why This Matters</h2>
+<ul>
+<li><strong>A sponsorship pitch that ignores the channels it&#39;s competing against is not a complete pitch.</strong> Brands evaluate every marketing investment against alternatives — VYRO&#39;s proposals should acknowledge and address that comparison directly, not pretend it doesn&#39;t exist.</li>
+<li><strong>Sponsorship&#39;s real strengths (authenticity, association, experiential depth) are most persuasive when explicitly contrasted against channels that lack them</strong> (e.g., pure digital advertising, which offers precision and measurability but little authentic association).</li>
+<li><strong>Blended channel proposals — sponsorship plus content, plus influencer activation — are consistently more competitive than sponsorship-only proposals</strong>, because they mirror how sophisticated marketing teams actually plan budgets.</li>
+</ul>
+<hr>
+<h2>5. Core Lesson</h2>
+<h3>5.1 The Channel Landscape</h3>
+<p>A brand&#39;s marketing budget typically spans: <strong>paid digital advertising</strong> (social, search — highly measurable, precise targeting, lower authenticity/association value), <strong>television and streaming advertising</strong> (broad reach, high production cost, limited targeting precision), <strong>influencer marketing</strong> (borrowed authenticity and audience trust, variable measurability), <strong>content marketing</strong> (owned, brand-controlled storytelling, slower to build audience), <strong>event marketing</strong> (direct, high-engagement experiences, typically higher cost per person reached), and <strong>sponsorship</strong> (borrowed association and access to an existing, engaged audience, typically the strongest tool for authentic brand positioning).</p>
+<p>No channel is universally superior — each has a different profile of reach, precision, cost-efficiency, and authenticity, and a sophisticated brand blends multiple channels deliberately.</p>
+<h3>5.2 Sports Marketing</h3>
+<p>Sports Marketing is the broader discipline of using sports platforms, culture, and athletes to achieve marketing objectives — sponsorship is one tool within sports marketing, but not the only one. Sports marketing also includes athlete partnerships and endorsements, sports-themed content and advertising campaigns, and sports-adjacent experiential activations that may not involve a formal sponsorship agreement at all. Understanding this distinction matters because a brand pursuing &quot;sports marketing&quot; broadly may be a strong prospect even if a traditional sponsorship isn&#39;t the first or only product VYRO proposes.</p>
+<h3>5.3 Event Marketing</h3>
+<p>Event Marketing is a brand&#39;s use of live, in-person (or hybrid) experiences to engage an audience directly — this can occur within a sponsored property (an activation at a sponsored event, covered in Phase 09) or entirely independent of any sponsorship (a brand&#39;s own proprietary event). Recognizing when a brand is genuinely an event-marketing-first company helps VYRO position sponsorship specifically as a way to extend or amplify that existing event marketing investment, rather than presenting it as an unrelated, separate ask.</p>
+<h3>5.4 Influencer Marketing</h3>
+<p>Influencer Marketing uses individual creators&#39; or athletes&#39; personal audiences and credibility to reach and persuade a brand&#39;s target customer. It shares a key strength with sponsorship — borrowed authenticity — but operates through an individual&#39;s personal brand rather than an institution&#39;s. A sophisticated blended pitch often pairs a property sponsorship with an athlete or creator affiliated with that property, combining institutional association with individual audience reach.</p>
+<h3>5.5 Content Marketing</h3>
+<p>Content Marketing is a brand&#39;s investment in owned, brand-controlled storytelling (articles, video series, social content) built to attract and retain an audience over time, without the reach and immediacy of paid channels. Content Marketing and sponsorship intersect directly through Brand Integration (Phase 02) — a co-branded content series produced in partnership with a sponsored property is simultaneously a sponsorship activation and a content marketing investment, and should be positioned as delivering value on both fronts.</p>
+<h3>5.6 Where Sponsorship Fits — The Blended Channel Pitch</h3>
+<p>Sponsorship&#39;s core competitive strengths relative to other channels are <strong>authenticity</strong> (association with a real, trusted property, not just paid media), <strong>experiential depth</strong> (hospitality and activation deliver something paid advertising cannot), and <strong>community access</strong> (a genuine connection to an engaged, specific audience). Its relative weaknesses are <strong>precision targeting</strong> (compared to digital advertising) and, without disciplined measurement (Phase 02), <strong>provable short-term ROI</strong>.</p>
+<p>The strongest VYRO proposals directly acknowledge this profile and build a <strong>blended channel pitch</strong>: sponsorship as the foundation, paired with a content marketing component (a co-branded content series) and, where relevant, an influencer/athlete component — creating a multi-channel package that competes credibly against a brand&#39;s full marketing mix rather than asking sponsorship to win the budget comparison alone.</p>
+<hr>
+<h2>6. Commercial Frameworks</h2>
+<h3>Framework: Channel Comparison Matrix</h3>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Reach</th>
+<th>Precision Targeting</th>
+<th>Authenticity/Association</th>
+<th>Typical Cost Efficiency</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Paid Digital (social/search)</td>
+<td>High</td>
+<td>Very High</td>
+<td>Low</td>
+<td>High (CPM-efficient)</td>
+</tr>
+<tr>
+<td>TV/Streaming Advertising</td>
+<td>Very High</td>
+<td>Low</td>
+<td>Moderate</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td>Influencer Marketing</td>
+<td>Variable</td>
+<td>Moderate-High</td>
+<td>High</td>
+<td>Variable</td>
+</tr>
+<tr>
+<td>Content Marketing</td>
+<td>Low (builds over time)</td>
+<td>Moderate</td>
+<td>High</td>
+<td>High (long-term)</td>
+</tr>
+<tr>
+<td>Event Marketing</td>
+<td>Low-Moderate</td>
+<td>High (in-person)</td>
+<td>High</td>
+<td>Low (high cost per person)</td>
+</tr>
+<tr>
+<td>Sponsorship</td>
+<td>Moderate-High</td>
+<td>Low-Moderate</td>
+<td>Very High</td>
+<td>Moderate</td>
+</tr>
+</tbody></table>
+<p>Use this matrix directly in proposal conversations when a brand raises a channel-comparison objection (a Phase 04 Uncertainty-category objection, most often).</p>
+<h3>Framework: The Blended Channel Pitch</h3>
+<pre><code>SPONSORSHIP (foundation — authenticity + access)
+        +
+CONTENT MARKETING (Brand Integration — owned storytelling extension)
+        +
+INFLUENCER/ATHLETE COMPONENT (where relevant — borrowed individual audience)
+        =
+A MULTI-CHANNEL PACKAGE, not a single line-item ask
+</code></pre>
+<hr>
+<h2>7. Step-by-Step Process</h2>
+<p><strong>How to position a sponsorship proposal against a brand&#39;s broader channel mix:</strong></p>
+<ol>
+<li>Identify which channels the brand already appears to invest in (from Lesson 5.1&#39;s research and additional public signals — recent ad campaigns, visible influencer partnerships, content series).</li>
+<li>Place sponsorship&#39;s relative strengths (Section 5.6) directly against what those existing channels don&#39;t provide.</li>
+<li>Identify at least one blended-channel opportunity (a content component, an influencer/athlete component) to strengthen the proposal beyond sponsorship alone.</li>
+<li>Translate reach and exposure into CPM terms (Phase 02) to allow direct comparison against the brand&#39;s known or likely digital spend.</li>
+<li>Build the final pitch to explicitly acknowledge the channel comparison, rather than presenting sponsorship as if it exists in a vacuum.</li>
+</ol>
+<hr>
+<h2>8. Real Industry Examples</h2>
+<p><strong>A brand pairing a property sponsorship with a co-branded content series featuring athletes or personalities from that property</strong> — a direct, observable example of the Blended Channel Pitch combining sponsorship, content marketing, and an influencer/athlete component simultaneously.</p>
+<p><strong>A financial services or insurance brand&#39;s typical marketing mix spanning broad television advertising, targeted digital campaigns, and sports sponsorships simultaneously</strong> — illustrates how large, sophisticated brands routinely blend channels rather than relying on any single one, reinforcing why VYRO&#39;s pitches should acknowledge and fit into that broader mix.</p>
+<p><strong>A brand using an athlete or creator affiliated with a sponsored property to extend a campaign onto social and content channels beyond the property&#39;s own audience</strong> — illustrates influencer marketing and sponsorship working together to extend reach beyond what the sponsored property&#39;s own channels could deliver alone.</p>
+<hr>
+<h2>9. VYRO Best Practices</h2>
+<ul>
+<li><strong>Always research a brand&#39;s existing channel mix before pitching</strong> — proposing sponsorship in a vacuum, without acknowledging what else the brand is already doing, reads as uninformed.</li>
+<li><strong>Default to a blended-channel pitch whenever a plausible content or influencer/athlete component exists</strong> — this consistently strengthens a proposal&#39;s competitiveness against alternative budget uses.</li>
+<li><strong>Translate sponsorship reach into CPM terms proactively</strong>, before a brand&#39;s team is forced to ask for it — this signals fluency in their own internal evaluation language (directly built on Phase 02).</li>
+<li><strong>Be honest about sponsorship&#39;s relative weaknesses (precision targeting, provable short-term ROI)</strong> rather than overselling — and address them directly through disciplined measurement commitments (Phase 02&#39;s Sponsor Value Report) rather than avoiding the topic.</li>
+</ul>
+<hr>
+<h2>10. Common Mistakes</h2>
+<ul>
+<li><strong>Pitching sponsorship as if it exists in a vacuum</strong>, with no acknowledgment of the brand&#39;s other channel investments.</li>
+<li><strong>Confusing Sports Marketing (the broad discipline) with sponsorship (one specific tool within it)</strong> — missing opportunities to propose athlete partnerships or sports-themed content alongside or instead of a traditional sponsorship.</li>
+<li><strong>Failing to propose a blended-channel pitch when a natural content or influencer/athlete opportunity clearly exists.</strong></li>
+<li><strong>Avoiding sponsorship&#39;s genuine relative weaknesses</strong> rather than addressing them directly with a measurement commitment.</li>
+<li><strong>Using reach numbers without CPM context</strong>, missing the opportunity to speak the brand&#39;s own internal budget-comparison language.</li>
+</ul>
+<hr>
+<h2>11. Professional Tips</h2>
+<ul>
+<li>Build the habit of researching a prospective brand&#39;s recent ad campaigns and visible content/influencer activity as a standard part of Lesson 5.1&#39;s research process — this belongs in the same research pass, not a separate step.</li>
+<li>Keep a running list of real blended-channel proposal ideas (content series concepts, athlete/influencer pairing ideas) tied to VYRO&#39;s actual client properties — this becomes genuinely useful, reusable proposal material.</li>
+<li>Practice translating a property&#39;s reach numbers into a CPM comparison quickly and confidently — this is a specific, learnable skill, not just background knowledge.</li>
+</ul>
+<hr>
+<h2>12. Templates</h2>
+<h3>Template: Channel Positioning Card</h3>
+<pre><code>BRAND: _______________________
+
+EXISTING CHANNEL MIX (from research):
+- Paid digital: 
+- TV/streaming: 
+- Influencer: 
+- Content: 
+- Event marketing: 
+
+SPONSORSHIP&#39;S RELATIVE STRENGTH FOR THIS BRAND:
+
+
+BLENDED CHANNEL OPPORTUNITY (content/influencer/athlete component):
+
+
+CPM COMPARISON (property reach translated to CPM vs. known/likely digital benchmark):
+</code></pre>
+<hr>
+<h2>13. Checklists</h2>
+<p><strong>Channel Positioning Checklist</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Brand&#39;s existing channel mix researched before pitching</li>
+<li><input disabled="" type="checkbox"> Sponsorship&#39;s relative strengths explicitly connected to a gap in that existing mix</li>
+<li><input disabled="" type="checkbox"> At least one blended-channel component proposed where plausible</li>
+<li><input disabled="" type="checkbox"> Reach translated into CPM terms for direct comparison</li>
+<li><input disabled="" type="checkbox"> Sponsorship&#39;s relative weaknesses acknowledged and addressed with a measurement commitment, not avoided</li>
+</ul>
+<hr>
+<h2>14. Worksheets</h2>
+<p><strong>Worksheet: Blended Pitch Builder</strong></p>
+<p>Using five of the 30 companies researched in Lesson 5.1&#39;s homework, build a full Channel Positioning Card for each, including a specific, real blended-channel opportunity (content and/or influencer/athlete component) for each one.</p>
+<hr>
+<h2>15. Homework</h2>
+<ol>
+<li><strong>Complete the Blended Pitch Builder worksheet</strong> for five companies from Lesson 5.1&#39;s research.</li>
+<li><strong>Write one full blended-channel proposal outline</strong> (one page) for your single strongest example — combining sponsorship with at least one additional channel, including a CPM comparison and an explicit acknowledgment of the brand&#39;s existing channel mix.</li>
+<li><strong>Define, in your own words, the distinction between Sports Marketing and Sponsorship</strong>, with one real example of a sports marketing activity that is not a traditional sponsorship.</li>
+</ol>
+<p>Deliverable format: one document containing the five Channel Positioning Cards, the full blended-channel proposal outline, and the Sports Marketing/Sponsorship distinction write-up.</p>
+<hr>
+<h2>16. Manager Coaching Notes</h2>
+<p><strong>Purpose of this lesson in the employee&#39;s development:</strong> This lesson tests whether an employee can position sponsorship credibly within a brand&#39;s real, competitive budget-allocation process — rather than pitching sponsorship as a standalone product. Managers should watch for pitches that ignore the existence of competing channels entirely.</p>
+<p><strong>Discussion questions to ask in review:</strong></p>
+<ul>
+<li>&quot;Walk me through your strongest blended-channel proposal — what&#39;s the content or influencer component adding that sponsorship alone wouldn&#39;t?&quot;</li>
+<li>&quot;If a brand&#39;s marketing director said &#39;why not just put this budget into paid social instead?&#39; — how would you respond, using the Channel Comparison Matrix?&quot;</li>
+<li>&quot;Give me a real example of sports marketing activity that isn&#39;t a formal sponsorship.&quot;</li>
+</ul>
+<p><strong>Expected answers:</strong> A proficient employee can defend a blended-channel pitch specifically (not generically), use the Channel Comparison Matrix fluently in response to a budget-alternative challenge, and clearly distinguish sports marketing from sponsorship with a real example.</p>
+<p><strong>Coaching tips:</strong></p>
+<ul>
+<li>If an employee&#39;s blended pitch is superficial (content/influencer component tacked on without real reasoning), have them rebuild it specifically around what that component adds that sponsorship alone doesn&#39;t.</li>
+<li>If an employee cannot respond confidently to the &quot;why not paid social instead&quot; challenge, revisit the Channel Comparison Matrix and CPM translation skill directly before moving on.</li>
+</ul>
+<p><strong>Common employee mistakes to watch for:</strong></p>
+<ul>
+<li>Sponsorship-only pitches with no channel-mix awareness.</li>
+<li>Superficial or unreasoned blended-channel additions.</li>
+<li>Confusing sports marketing broadly with sponsorship specifically.</li>
+</ul>
+<p><strong>Evaluation checklist:</strong> see Grading Rubric (Section 20).</p>
+<hr>
+<h2>18. Practical Exercise</h2>
+<p><strong>Exercise: Channel Defense</strong></p>
+<p>Manager provides one of the five companies from the employee&#39;s Blended Pitch Builder homework and role-plays a brand contact directly challenging the sponsorship proposal against a specific named alternative channel (e.g., &quot;why not just increase our influencer budget instead?&quot;). Employee has 5 minutes to prepare and then responds verbally.</p>
+<p>Evaluation focus: whether the response uses the Channel Comparison Matrix specifically and credibly, and whether it proposes a constructive blended path rather than a purely defensive one.</p>
+<hr>
+<h2>19. Role-Play Exercise</h2>
+<p><strong>Scenario:</strong> You&#39;re pitching a blended-channel sponsorship proposal to a brand&#39;s Chief Marketing Officer, who is known for being highly channel-mix-literate. Your manager plays this CMO.</p>
+<p><strong>Manager&#39;s role-play brief:</strong> Open by asking the employee to justify the proposed budget against at least two other channels directly (e.g., &quot;convince me this beats putting the same budget into our existing influencer program and our streaming ad buy&quot;). Push for CPM-level specificity if the employee&#39;s answer stays vague.</p>
+<p><strong>What &quot;good&quot; looks like:</strong> The employee responds with specific, channel-literate reasoning (not generic enthusiasm), uses CPM comparisons where relevant, and reinforces the blended-channel structure of the proposal rather than defending sponsorship in isolation.</p>
+<hr>
+<h2>20. Grading Rubric</h2>
+<p>Scored out of 100.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+<th>Exemplary (full points)</th>
+<th>Proficient</th>
+<th>Developing</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research</td>
+<td>10</td>
+<td>Existing channel mix research is specific and well-sourced for all five companies</td>
+<td>Minor gaps</td>
+<td>Generic in places</td>
+<td>Research superficial or absent</td>
+</tr>
+<tr>
+<td>Business Understanding</td>
+<td>10</td>
+<td>Correctly distinguishes Sports Marketing, Event Marketing, Influencer Marketing, and Content Marketing from sponsorship</td>
+<td>Minor gaps</td>
+<td>Frequent confusion</td>
+<td>Distinctions not understood</td>
+</tr>
+<tr>
+<td>Commercial Strategy</td>
+<td>10</td>
+<td>Blended-channel proposal outline is specific, well-reasoned, and genuinely additive</td>
+<td>Mostly sound</td>
+<td>Superficial blending</td>
+<td>No real blended strategy</td>
+</tr>
+<tr>
+<td>Critical Thinking</td>
+<td>10</td>
+<td>CPM comparison is correctly reasoned and appropriately applied</td>
+<td>Mostly correct</td>
+<td>Weak reasoning</td>
+<td>Not meaningfully applied</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>10</td>
+<td>Channel Positioning Cards and proposal outline are clear, professional, proposal-ready</td>
+<td>Minor organization issues</td>
+<td>Hard to follow in places</td>
+<td>Disorganized</td>
+</tr>
+<tr>
+<td>Professionalism</td>
+<td>10</td>
+<td>On time, correctly formatted, ready for manager review</td>
+<td>Minor formatting issues</td>
+<td>Notable gaps</td>
+<td>Unprofessional or incomplete</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>10</td>
+<td>Role-play response is channel-literate, specific, and confident under CMO-level scrutiny</td>
+<td>Mostly confident</td>
+<td>Vague under pressure</td>
+<td>Unable to defend proposal</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>10</td>
+<td>Channel Comparison Matrix used correctly and consistently</td>
+<td>1–2 errors</td>
+<td>3–4 errors</td>
+<td>Matrix not meaningfully applied</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>10</td>
+<td>Channel Defense practical exercise completed accurately within time limit</td>
+<td>Mostly accurate</td>
+<td>Several gaps under time pressure</td>
+<td>Unable to complete under time pressure</td>
+</tr>
+<tr>
+<td>Overall Quality</td>
+<td>10</td>
+<td>Publish-ready for LMS with no manager edits</td>
+<td>Minor edits needed</td>
+<td>Substantial rework needed</td>
+<td>Does not meet bar</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum passing score for this lesson: 75/100.</strong></p>
+<hr>
+<h2>21. Reflection Questions</h2>
+<ol>
+<li>Before this lesson, would you have pitched sponsorship as a standalone ask or acknowledged the brand&#39;s broader channel mix? What&#39;s changed?</li>
+<li>Which blended-channel component (content or influencer/athlete) do you expect to use most often in real VYRO proposals, and why?</li>
+<li>Why might a brand&#39;s own internal use of CPM as an evaluation metric make it especially important for VYRO to speak in those same terms?</li>
+<li>Looking back at Phase 05 overall, how has your understanding of &quot;what a brand actually wants&quot; changed since before this phase?</li>
+</ol>
+<hr>
+<h2>22. Recommended Reading</h2>
+<ul>
+<li>General marketing-mix or media-planning resources explaining how brands typically allocate budget across paid, owned, and earned channels</li>
+<li>Any case study of a brand combining sponsorship with content or influencer marketing simultaneously, read specifically to identify the blended-channel structure</li>
+<li>Recent coverage of any major brand&#39;s sports marketing strategy, read specifically to distinguish sponsorship activity from broader sports marketing activity (athlete deals, sports-themed content, etc.)</li>
+</ul>
+<hr>
+<h2>23. Key Takeaways</h2>
+<ul>
+<li>Sponsorship competes against a full landscape of marketing channels — paid digital, TV/streaming, influencer, content, and event marketing — each with a different reach/precision/authenticity/cost profile.</li>
+<li>Sports Marketing is a broader discipline than sponsorship; sponsorship is one tool within it, alongside athlete partnerships and sports-themed content.</li>
+<li>Sponsorship&#39;s core relative strengths are authenticity, experiential depth, and community access; its relative weaknesses are precision targeting and provable short-term ROI without disciplined measurement.</li>
+<li>Blended-channel pitches (sponsorship plus content and/or influencer/athlete components) consistently outperform sponsorship-only pitches.</li>
+<li>Translating reach into CPM terms and directly acknowledging a brand&#39;s existing channel mix are both learnable, specific skills that separate strong VYRO pitches from generic ones.</li>
+</ul>
+<hr>
+<p><strong>Phase 05 status:</strong> Both lessons (5.1, 5.2) now drafted. Next: Phase 05 Certification block — pending your review of this lesson.</p>
+</article>
+    <section class="quiz" aria-label="Knowledge Check">
+    <div class="quiz-head">
+      <span class="quiz-eyebrow">Knowledge Check</span>
+      <h2 class="quiz-title">Test What You Just Learned</h2>
+    </div>
+    <div class="quiz-questions"><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q1</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">Compared to paid digital advertising, sponsorship's relative strength is generally:</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Precision targeting</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Authenticity and association</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Lower cost per impression</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Immediate, trackable conversion</span></button></div>
+        </div><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q2</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">Sports Marketing is best described as:</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">A synonym for sponsorship</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">A broader discipline of which sponsorship is one tool among several</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">A channel exclusively used by athletic brands</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">A subcategory of influencer marketing</span></button></div>
+        </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q3</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Why is a sponsorship-only pitch weaker than a blended-channel pitch, in general?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that sponsorship-only pitches compete as a single line item against a brand's full channel mix, while blended pitches (adding content/influencer components) mirror how sophisticated brands actually plan budgets and offer more total value.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q4</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Give an example of how sponsorship reach would be translated into CPM terms for a brand comparison conversation.</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>should describe converting a property's total audience/impression reach into a cost-per-thousand figure comparable to the brand's known or estimated digital advertising CPM benchmarks.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q5</span><span class="quiz-q-type">Applied</span></div>
+        <p class="quiz-q-text">A brand's marketing director says, "we could just run this budget through paid social instead — why sponsorship?" What's a strong, specific response?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>should reference the Channel Comparison Matrix directly — acknowledging paid social's precision targeting strength while making the specific case for sponsorship's authenticity/association advantage and, ideally, proposing a blended approach rather than an either/or framing.</div>
+      </div></div>
+    <div class="quiz-footer">
+      <div class="quiz-score">Multiple choice score: <span class="quiz-score-val">0</span> / 2</div>
+      <div class="quiz-passing"><strong>Passing score:</strong> 4 of 5 correct, with Questions 3 and 5 answered with full reasoning.</div>
+    </div>
+  </section>
+    <div class="pagenav">
+      <a class="pagenav-link prev" href="p05-l1.html"><span class="pagenav-dir">← Previous</span><span class="pagenav-title">Lesson 5.1</span></a>
+      <a class="pagenav-link next" href="p05-cert.html"><span class="pagenav-dir">Next →</span><span class="pagenav-title">Certification</span></a>
+    </div>
+  </main>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Course Contents</span>
+        <button class="menu-toggle menu-toggle-close" id="menuCloseBtn" aria-label="Close navigation">✕</button>
+      </div>
+      <div class="nav-scroll"><a class="nav-item nav-home" href="index.html">Overview</a><details class="nav-group">
+        <summary><span class="nav-phase-num">01</span><span class="nav-phase-title">How Commercial Partnerships Actually Work</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p01-l1.html">Lesson 1.1</a><a class="nav-item" href="p01-l2.html">Lesson 1.2</a><a class="nav-item" href="p01-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">02</span><span class="nav-phase-title">The Language of Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p02-l1.html">Lesson 2.1</a><a class="nav-item" href="p02-l2.html">Lesson 2.2</a><a class="nav-item" href="p02-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">03</span><span class="nav-phase-title">Study Real Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p03-l1.html">Lesson 3.1</a><a class="nav-item" href="p03-l2.html">Lesson 3.2</a><a class="nav-item" href="p03-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">04</span><span class="nav-phase-title">Professional Sales</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p04-l1.html">Lesson 4.1</a><a class="nav-item" href="p04-l2.html">Lesson 4.2</a><a class="nav-item" href="p04-cert.html">Certification</a></div>
+      </details><details class="nav-group" open>
+        <summary><span class="nav-phase-num">05</span><span class="nav-phase-title">Marketing</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p05-l1.html">Lesson 5.1</a><a class="nav-item active" href="p05-l2.html">Lesson 5.2</a><a class="nav-item" href="p05-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">06</span><span class="nav-phase-title">Commercial Assets</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p06-l1.html">Lesson 6.1</a><a class="nav-item" href="p06-l2.html">Lesson 6.2</a><a class="nav-item" href="p06-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">07</span><span class="nav-phase-title">Sponsorship Valuation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p07-l1.html">Lesson 7.1</a><a class="nav-item" href="p07-l2.html">Lesson 7.2</a><a class="nav-item" href="p07-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">08</span><span class="nav-phase-title">Sponsorship Packages</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p08-l1.html">Lesson 8.1</a><a class="nav-item" href="p08-l2.html">Lesson 8.2</a><a class="nav-item" href="p08-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">09</span><span class="nav-phase-title">Partnership Activation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p09-l1.html">Lesson 9.1</a><a class="nav-item" href="p09-l2.html">Lesson 9.2</a><a class="nav-item" href="p09-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">10</span><span class="nav-phase-title">Client Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p10-l1.html">Lesson 10.1</a><a class="nav-item" href="p10-l2.html">Lesson 10.2</a><a class="nav-item" href="p10-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">11</span><span class="nav-phase-title">Commercial Rights Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p11-l1.html">Lesson 11.1</a><a class="nav-item" href="p11-l2.html">Lesson 11.2</a><a class="nav-item" href="p11-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">12</span><span class="nav-phase-title">Business Development</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p12-l1.html">Lesson 12.1</a><a class="nav-item" href="p12-l2.html">Lesson 12.2</a><a class="nav-item" href="p12-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">13</span><span class="nav-phase-title">Finance</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p13-l1.html">Lesson 13.1</a><a class="nav-item" href="p13-l2.html">Lesson 13.2</a><a class="nav-item" href="p13-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">14</span><span class="nav-phase-title">Building VYRO</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p14-l1.html">Lesson 14.1</a><a class="nav-item" href="p14-l2.html">Lesson 14.2</a><a class="nav-item" href="p14-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">15</span><span class="nav-phase-title">Executive Leadership</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p15-l1.html">Lesson 15.1</a><a class="nav-item" href="p15-l2.html">Lesson 15.2</a><a class="nav-item" href="p15-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">16</span><span class="nav-phase-title">Capstone Project</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p16-brief.html">Brief + Stage 16.1</a><a class="nav-item" href="p16-stage-2.html">Stage 16.2</a><a class="nav-item" href="p16-stage-3.html">Stage 16.3</a><a class="nav-item" href="p16-stage-4.html">Stage 16.4</a><a class="nav-item" href="p16-stage-5.html">Stage 16.5</a><a class="nav-item" href="p16-certification.html">Graduation</a></div>
+      </details></div>
+    </div>
+  </nav>
+</div>
+</div>
+<script>
+var menuBtn = document.getElementById('menuToggle');
+var closeBtn = document.getElementById('menuCloseBtn');
+function openMenu(){ document.getElementById('sidebar').classList.add('open'); document.body.classList.add('menu-open'); }
+function closeMenu(){ document.getElementById('sidebar').classList.remove('open'); document.body.classList.remove('menu-open'); }
+menuBtn.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+document.querySelectorAll('.sidebar .nav-item').forEach(function(a){
+  a.addEventListener('click', closeMenu);
+});
+document.querySelectorAll('.doc pre, .doc table').forEach(function(el){
+  var wrap = el.tagName === 'TABLE' ? el : el;
+  function check(){
+    if (wrap.scrollWidth > wrap.clientWidth + 2) wrap.classList.add('has-overflow');
+    else wrap.classList.remove('has-overflow');
+  }
+  check();
+  window.addEventListener('resize', check);
+  wrap.addEventListener('scroll', function(){
+    var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+    wrap.classList.toggle('scrolled-end', atEnd);
+  });
+});
+document.querySelectorAll('.quiz-q-mc').forEach(function(q){
+  var quizEl = q.closest('.quiz');
+  var scoreEl = quizEl ? quizEl.querySelector('.quiz-score-val') : null;
+  q.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (q.classList.contains('answered')) return;
+      q.classList.add('answered');
+      var correct = btn.getAttribute('data-correct') === 'true';
+      btn.classList.add(correct ? 'correct' : 'incorrect');
+      if (!correct) {
+        var correctBtn = q.querySelector('[data-correct="true"]');
+        if (correctBtn) correctBtn.classList.add('reveal-correct');
+      } else if (scoreEl) {
+        scoreEl.textContent = String(Number(scoreEl.textContent) + 1);
+      }
+      q.querySelectorAll('.quiz-option').forEach(function(b){ b.disabled = true; });
+    });
+  });
+});
+document.querySelectorAll('.quiz-reveal-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var box = btn.nextElementSibling;
+    var hidden = box.hasAttribute('hidden');
+    if (hidden) { box.removeAttribute('hidden'); btn.textContent = 'Hide Expected Answer'; }
+    else { box.setAttribute('hidden',''); btn.textContent = 'Show Expected Answer'; }
+  });
+});
+</script>
+</body>
+</html>

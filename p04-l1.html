@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 4.1 — Prospecting &amp; Outreach — Building the Pipeline · VYRO Commercial Sales Academy</title>
+<meta name="description" content="VYRO Commercial Sales Academy — internal certification program for commercial partnerships professionals.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231B2A56%22/><text x=%2250%25%22 y=%2261%25%22 font-size=%2258%22 fill=%22%23FFFFFF%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22900%22>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F2F4F8; --gold-deep:#E7EAF1;
+  --cream:#FFFFFF; --cream-2:#EEF1F6; --cream-3:#E3E7EF;
+  --ink:#16213D; --ink-mute:rgba(22,33,61,0.64); --ink-faint:rgba(22,33,61,0.42);
+  --line:rgba(22,33,61,0.12); --line-strong:rgba(22,33,61,0.22);
+  --accent:#1B2A56; --accent-deep:#12203F; --accent-soft:rgba(27,42,86,0.08);
+  --success:#1E7A4C; --success-soft:rgba(30,122,76,0.1);
+  --danger:#B3392C; --danger-soft:rgba(179,57,44,0.1);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Anton', 'Archivo Black', sans-serif;
+  --font-badge: 'Baloo 2', 'Inter', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--gold);color:var(--ink);font-family:var(--font);}
+body{-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle at 8px 8px, rgba(255,255,255,0.35) 2px, transparent 2px);background-size:26px 26px;}
+a{color:inherit;text-decoration:none;}
+.frame{padding:14px;min-height:100vh;}
+.shell{display:flex;flex-direction:column;min-height:calc(100vh - 28px);background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(33,20,6,0.28);position:relative;}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 40px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--cream);font-family:var(--font-badge);font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 3px 0 var(--accent-deep);transform:rotate(-4deg);}
+.brand-text{font-family:var(--font-badge);font-size:15px;font-weight:800;letter-spacing:1.5px;line-height:1.5;color:var(--ink);}
+.brand-text small{font-size:10px;font-weight:600;letter-spacing:0.5px;color:var(--ink-mute);text-transform:none;font-family:var(--font);}
+
+.menu-toggle{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);border:none;padding:13px 22px;border-radius:30px;font-family:var(--font-badge);font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,0.35);cursor:pointer;transition:transform .12s;flex:none;}
+.menu-toggle:hover{transform:translateY(-1px);}
+.menu-toggle-icon{font-size:15px;line-height:1;}
+.menu-toggle-close{padding:0;width:42px;height:42px;justify-content:center;border-radius:12px;background:var(--cream-2);color:var(--ink);box-shadow:0 2px 0 var(--line-strong);}
+
+.sidebar{
+  width:100%;position:fixed;inset:0;z-index:60;background:var(--cream-3);
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;
+  transition:opacity .18s ease, visibility .18s ease;
+}
+.sidebar.open{opacity:1;visibility:visible;}
+body.menu-open{overflow:hidden;}
+.sidebar-inner{display:flex;flex-direction:column;height:100%;max-width:640px;margin:0 auto;width:100%;}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.sidebar-title{font-family:var(--font-display);font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.nav-scroll{overflow-y:auto;flex:1;padding:20px 28px 40px;}
+.nav-item{display:block;padding:9px 14px;border-radius:9px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.nav-item:hover{background:rgba(33,20,6,0.05);color:var(--ink);}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:700;transform:rotate(-1deg);box-shadow:0 2px 0 var(--accent-deep);}
+.nav-home{margin-bottom:14px;font-weight:800;color:var(--ink);font-family:var(--font-badge);letter-spacing:0.3px;font-size:14.5px;padding:11px 14px;background:var(--cream-2);border-radius:10px;}
+.nav-home.active{background:var(--accent);}
+.nav-group{margin-bottom:10px;background:var(--cream-2);border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+.nav-group[open]{border-color:var(--accent);box-shadow:0 3px 0 rgba(228,35,31,0.18);}
+.nav-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:13px;color:var(--ink-mute);user-select:none;}
+.nav-group summary::-webkit-details-marker{display:none;}
+.nav-group summary::after{content:"+";margin-left:auto;font-family:var(--font-display);font-size:16px;color:var(--ink-faint);}
+.nav-group[open] summary::after{content:"–";color:var(--accent);}
+.nav-group summary:hover{color:var(--ink);}
+.nav-group[open] summary{color:var(--ink);font-weight:700;}
+.nav-phase-num{font-family:var(--font-display);color:var(--accent);font-weight:400;font-size:19px;width:26px;flex:none;}
+.nav-phase-title{flex:1;line-height:1.3;font-family:var(--font-badge);font-weight:600;}
+.nav-items{padding:2px 14px 10px 48px;border-top:1px dashed var(--line-strong);margin-top:2px;padding-top:10px;}
+.nav-items .nav-item{font-size:12.5px;padding:7px 10px;}
+.content{flex:1;min-width:0;padding:56px 60px 100px;max-width:900px;margin:0 auto;width:100%;}
+.eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:16px;transform:rotate(-1.5deg);}
+.doc h1{font-family:var(--font-display);font-weight:400;letter-spacing:0.3px;font-size:38px;line-height:1.1;margin:0 0 22px;color:var(--ink);text-transform:uppercase;}
+.doc h2{font-family:var(--font-display);font-weight:400;font-size:23px;letter-spacing:0.2px;margin:44px 0 16px;padding-top:10px;border-top:2px dashed var(--line-strong);color:var(--ink);}
+.doc h2:first-of-type{border-top:none;padding-top:0;}
+.doc h3{font-size:17px;font-weight:700;margin:30px 0 10px;color:var(--ink);}
+.doc h4{font-size:13px;margin:22px 0 8px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
+.doc p{font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);margin:0 0 16px;}
+.doc strong{color:var(--ink);font-weight:700;}
+.doc em{color:rgba(33,20,6,0.75);}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:22px;font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);}
+.doc li{margin-bottom:6px;}
+.doc li p{margin-bottom:4px;}
+.doc hr{border:none;border-top:2px dashed var(--line-strong);margin:36px 0;}
+.doc code{font-family:'SF Mono',Consolas,monospace;font-size:13px;background:var(--cream-2);padding:2px 6px;border-radius:4px;color:var(--accent-deep);}
+.doc pre{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch;transition:mask-image .15s;}
+.doc pre code{background:none;padding:0;color:#E7EAF2;font-size:13px;line-height:1.6;}
+.doc pre.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:13.5px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--cream-2);border-radius:10px;}
+.doc table.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);}
+.doc th{text-align:left;color:var(--accent-deep);font-size:11px;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;padding:10px 14px;border-bottom:2px solid var(--line-strong);white-space:nowrap;}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--line);color:rgba(33,20,6,0.78);vertical-align:top;}
+.doc tr:hover td{background:rgba(228,35,31,0.04);}
+.doc blockquote{margin:0 0 20px;padding:4px 20px;border-left:3px solid var(--accent);color:var(--ink-mute);font-style:italic;}
+.doc a{color:var(--accent-deep);text-decoration:underline;text-decoration-color:rgba(228,35,31,0.4);}
+.pagenav{display:flex;justify-content:space-between;gap:20px;margin-top:60px;padding-top:28px;border-top:2px dashed var(--line-strong);}
+.pagenav-link{flex:1;padding:16px 18px;border:1px solid var(--line);border-radius:14px;transition:border-color .15s,transform .15s;background:var(--cream-2);}
+.pagenav-link:hover{border-color:var(--accent);transform:translateY(-2px);}
+.pagenav-link.next{text-align:right;}
+.pagenav-dir{display:block;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-weight:700;}
+.pagenav-title{display:block;font-size:14px;font-weight:700;color:var(--ink);}
+
+/* Quiz */
+.quiz{margin-top:56px;padding:36px 36px 32px;background:var(--cream-2);border:1px solid var(--line);border-radius:20px;}
+.quiz-head{margin-bottom:26px;}
+.quiz-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-title{font-family:var(--font-display);font-weight:400;font-size:24px;letter-spacing:0.2px;margin:0;color:var(--ink);}
+.quiz-questions{display:flex;flex-direction:column;gap:22px;}
+.quiz-q{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
+.quiz-q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.quiz-q-num{font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--accent);}
+.quiz-q-type{font-family:var(--font-badge);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);background:var(--cream-2);padding:3px 10px;border-radius:20px;}
+.quiz-q-text{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 16px;font-weight:600;}
+.quiz-options{display:flex;flex-direction:column;gap:8px;}
+.quiz-option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--cream);font-family:var(--font);font-size:14px;line-height:1.5;color:var(--ink-mute);cursor:pointer;transition:border-color .15s,background .15s;}
+.quiz-option:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft);}
+.quiz-option:disabled{cursor:default;}
+.quiz-option-letter{font-family:var(--font-badge);font-weight:700;color:var(--ink-faint);flex:none;}
+.quiz-option-text{flex:1;}
+.quiz-option.correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.correct .quiz-option-letter{color:var(--success);}
+.quiz-option.incorrect{border-color:var(--danger);background:var(--danger-soft);color:var(--ink);}
+.quiz-option.incorrect .quiz-option-letter{color:var(--danger);}
+.quiz-option.reveal-correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.reveal-correct .quiz-option-letter{color:var(--success);}
+.quiz-textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--font);font-size:14px;line-height:1.6;color:var(--ink);background:var(--cream);resize:vertical;margin-bottom:10px;}
+.quiz-textarea:focus{outline:none;border-color:var(--accent);}
+.quiz-reveal-btn{font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--accent);background:var(--accent-soft);border:none;padding:9px 16px;border-radius:20px;cursor:pointer;}
+.quiz-reveal-btn:hover{background:var(--accent);color:#fff;}
+.quiz-expected{margin-top:12px;padding:14px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;font-size:13.5px;line-height:1.6;color:var(--ink-mute);}
+.quiz-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed var(--line-strong);}
+.quiz-score{font-family:var(--font-badge);font-size:13px;font-weight:700;color:var(--ink);}
+.quiz-score-val{color:var(--accent);}
+.quiz-passing{font-size:12.5px;color:var(--ink-mute);}
+
+/* Home page */
+.hero{padding:8px 0 40px;position:relative;}
+.hero-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;transform:rotate(-1.5deg);}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:56px;line-height:1;margin:0 0 20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.hero p.lead{font-size:17px;line-height:1.6;color:var(--ink-mute);max-width:640px;margin:0 0 32px;}
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.stat{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:16px 22px;min-width:110px;}
+.stat .num{font-family:var(--font-display);font-weight:400;font-size:32px;color:var(--accent);line-height:1;}
+.stat .label{font-size:11px;color:var(--ink-mute);margin-top:6px;letter-spacing:0.5px;font-weight:700;text-transform:uppercase;}
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px;}
+.phase-card{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:var(--cream-2);transition:border-color .15s,transform .15s,box-shadow .15s;}
+.phase-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 0 rgba(33,20,6,0.06);}
+.phase-card .pn{display:inline-block;font-family:var(--font-badge);color:#fff;background:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-bottom:10px;transform:rotate(-2deg);}
+.phase-card .pt{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3;color:var(--ink);}
+.phase-card .pd{font-size:12.5px;color:var(--ink-mute);line-height:1.5;}
+
+@media (max-width: 900px){
+  .frame{padding:0;}
+  .shell{border-radius:0;min-height:100vh;box-shadow:none;}
+  .topbar{padding:16px 20px;}
+  .brand-text{font-size:12px;}
+  .menu-toggle{padding:11px 16px;font-size:11px;}
+  .sidebar-head{padding:18px 20px;}
+  .nav-scroll{padding:16px 20px 40px;}
+  .content{padding:36px 20px 70px;}
+  .doc h1{font-size:27px;}
+  .doc h2{font-size:20px;}
+  .nav-item{padding:14px 16px;font-size:16px;}
+  .nav-items{padding:2px 12px 12px 20px;}
+  .nav-items .nav-item{padding:12px 10px;font-size:14.5px;}
+  .nav-group summary{padding:15px 16px;font-size:15px;}
+  .nav-home{margin-bottom:10px;}
+  .pagenav{flex-direction:column;}
+  .stat-row{gap:10px;}
+  .stat{padding:12px 16px;min-width:90px;}
+  .hero h1{font-size:36px;}
+  .phase-grid{grid-template-columns:1fr;}
+  .quiz{padding:26px 20px 24px;}
+  .quiz-q{padding:16px 16px;}
+  .quiz-footer{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      <span class="brand-text">VYRO<br><small>Commercial Sales Academy</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">MENU <span class="menu-toggle-icon">☰</span></button>
+  </header>
+  <main class="content">
+    <div class="eyebrow">Phase 04 · Professional Sales</div>
+    <article class="doc"><h1>Lesson 4.1 — Prospecting &amp; Outreach: Building the Pipeline</h1>
+<hr>
+<h2>1. Lesson Overview</h2>
+<p>Phases 01 through 03 gave you the map, the language, and the analytical judgment. Phase 04 is where you start actually doing the job: finding the right prospects, reaching them, and moving them through a disciplined process toward a signed relationship.</p>
+<p>This lesson covers the first half of that process — everything that happens before a prospect ever agrees to a real conversation: prospecting, company research, lead qualification, CRM discipline, pipeline management, and the three primary outreach channels (cold email, cold calling, LinkedIn). Lesson 4.2 covers what happens once a prospect says yes to a conversation — discovery, needs analysis, objection handling, negotiation, and closing.</p>
+<p>A critical distinction that runs through this entire phase: VYRO prospects on <strong>two sides simultaneously</strong>. VYRO prospects <em>rights holders</em> (universities, venues, events — organizations that might hire VYRO as their commercial rights company) and, separately, VYRO prospects <em>brands</em> on behalf of existing rights holder clients (companies that might buy a specific partnership). These are related but distinct skills, and this lesson teaches both.</p>
+<hr>
+<h2>2. Learning Objectives</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ol>
+<li>Explain the difference between rights holder-side prospecting and brand-side prospecting, and identify which applies to a given situation.</li>
+<li>Build a qualified prospect list using a defined set of qualification criteria, not gut instinct.</li>
+<li>Conduct company research on a prospect using the frameworks from Phases 01–03 before any outreach is sent.</li>
+<li>Write effective cold emails, cold call openings, and LinkedIn outreach messages that reflect real research, not generic templates.</li>
+<li>Maintain disciplined CRM and pipeline hygiene, correctly categorizing prospects by pipeline stage.</li>
+</ol>
+<hr>
+<h2>3. Business Context</h2>
+<p>VYRO&#39;s growth depends on a consistent, disciplined pipeline — not sporadic bursts of outreach followed by long gaps. New employees often assume prospecting is the least skilled part of the sales process, something to rush through to get to &quot;the real work&quot; of pitching and closing. In practice, the opposite is true: a poorly qualified, poorly researched prospect list guarantees a bad outcome no matter how good the eventual pitch is. VYRO&#39;s most experienced commercial professionals treat prospecting and research with the same rigor as a client presentation, because the quality of everything downstream — the discovery conversation, the proposal, the eventual deal — depends on it.</p>
+<hr>
+<h2>4. Why This Matters</h2>
+<ul>
+<li><strong>Unqualified prospects waste the most expensive resource VYRO has: time with a live conversation.</strong> A poorly qualified prospect list produces discovery meetings that go nowhere, which compounds across an entire sales team.</li>
+<li><strong>Generic outreach gets generic response rates.</strong> A cold email that could have been sent to any organization in the industry reads as generic, and gets treated accordingly — ignored, or answered without real engagement.</li>
+<li><strong>CRM and pipeline discipline is not administrative overhead — it&#39;s how VYRO (and any individual employee) actually knows what&#39;s working</strong>, what needs follow-up, and where the business is heading next quarter.</li>
+</ul>
+<hr>
+<h2>5. Core Lesson</h2>
+<h3>5.1 Two-Sided Prospecting</h3>
+<p><strong>Rights holder-side prospecting</strong> — identifying organizations (universities, venues, events, leagues, festivals) that might hire VYRO to become their outsourced commercial department. This prospecting targets decision-makers like athletic directors, venue general managers, event executive directors, or existing commercial staff who might be persuaded that VYRO&#39;s model outperforms their current approach (in-house, an incumbent competitor, or no formal commercial program at all).</p>
+<p><strong>Brand-side prospecting</strong> — once VYRO represents a rights holder, identifying brands that might buy specific commercial rights from that client. This prospecting targets marketing directors, brand managers, or sponsorship/partnerships leads at companies whose business objectives (Phase 05: Marketing develops this further) plausibly match what the rights holder can offer.</p>
+<p>Both require the same underlying discipline — qualification, research, and structured outreach — but the qualification criteria and messaging are different, because the &quot;yes&quot; you&#39;re pursuing is different: a rights holder is being asked to hand over commercial authority; a brand is being asked to spend marketing budget.</p>
+<h3>5.2 Company Research</h3>
+<p>Before any outreach, research should answer, at minimum:</p>
+<ul>
+<li><strong>For a rights holder prospect:</strong> What&#39;s their asset base (Phase 01 ecosystem map)? Do they already have a commercial rights company (and if so, which — Phase 03&#39;s peer set)? What&#39;s publicly known about their current commercial program&#39;s scale or gaps?</li>
+<li><strong>For a brand prospect:</strong> What&#39;s their business objective likely to be (Phase 05 develops this fully, but early signals include recent marketing moves, target markets, and competitor sponsorship activity)? Do they already sponsor comparable properties? Who is the likely decision-maker?</li>
+</ul>
+<p>Research should take 15–30 minutes per prospect before any outreach — this is a non-negotiable professional standard, not an optional step for when time allows.</p>
+<h3>5.3 Lead Qualification</h3>
+<p>Not every organization that could theoretically be prospected should be. Qualify every prospect against four criteria before adding them to active outreach:</p>
+<ul>
+<li><strong>Fit</strong> — does this organization&#39;s asset base (rights holder) or business need (brand) genuinely match what VYRO or VYRO&#39;s client can offer?</li>
+<li><strong>Authority</strong> — can you identify or reasonably reach the actual decision-maker, not just a generic contact?</li>
+<li><strong>Timing</strong> — is there a plausible reason this prospect might be receptive now (a contract expiring, a new venue opening, a recent leadership change, a competitor&#39;s category being open)?</li>
+<li><strong>Need</strong> — is there a specific, identifiable gap or opportunity this prospect has, rather than a generic assumption that &quot;they could probably use this&quot;?</li>
+</ul>
+<p>A prospect that fails two or more of these criteria should not receive active outreach yet — continue researching or deprioritize.</p>
+<h3>5.4 CRM &amp; Pipeline Discipline</h3>
+<p>Every qualified prospect should be logged in VYRO&#39;s CRM with, at minimum: contact information, qualification notes (Fit/Authority/Timing/Need), research summary, and current pipeline stage. Standard pipeline stages: <strong>Prospect → Qualified → Contacted → Discovery Scheduled → Proposal Sent → Negotiation → Closed (Won/Lost).</strong> Every prospect should have an accurate, current stage at all times — a stale or inaccurate CRM is functionally the same as not having a pipeline at all, because it can&#39;t be trusted for decision-making.</p>
+<h3>5.5 Outreach Channels</h3>
+<p><strong>Cold Email</strong> — should be short, specific to the prospect&#39;s actual situation (referencing real research, not generic praise), and end with a low-friction, specific ask (a 15-minute call on a specific topic, not an open-ended &quot;let&#39;s connect&quot;). Subject lines should be specific and honest, never clickbait.</p>
+<p><strong>Cold Calling</strong> — requires a prepared opening (who you are, why you&#39;re calling this specific organization, and a clear, low-commitment ask) and a plan for handling a gatekeeper professionally and persistently without being pushy.</p>
+<p><strong>LinkedIn Outreach</strong> — works best as a short, personalized connection note referencing something specific and real about the prospect&#39;s organization or recent activity, followed by a brief, valuable follow-up message after connection — not an immediate pitch.</p>
+<p>Across all three channels, the same rule applies: <strong>specificity beats volume.</strong> A shorter list of well-researched, personalized outreach attempts consistently outperforms a longer list of generic ones.</p>
+<hr>
+<h2>6. Commercial Frameworks</h2>
+<h3>Framework: The Two-Sided Prospecting Model</h3>
+<pre><code>RIGHTS HOLDER-SIDE                          BRAND-SIDE
+Target: universities, venues, events         Target: marketing/sponsorship decision-makers
+Ask: hand over commercial authority          Ask: invest marketing budget
+Research focus: asset base, incumbent rep    Research focus: business objective, category fit
+</code></pre>
+<h3>Framework: Fit / Authority / Timing / Need (F.A.T.N.) Qualification</h3>
+<p>Score each prospect 0–2 on each of the four criteria (Section 5.3) before committing outreach time. A prospect scoring 6+ of 8 is a strong priority; below 4 should not receive active outreach yet.</p>
+<h3>Framework: The Pipeline Ladder</h3>
+<pre><code>PROSPECT → QUALIFIED → CONTACTED → DISCOVERY SCHEDULED → PROPOSAL SENT → NEGOTIATION → CLOSED (WON/LOST)
+</code></pre>
+<p>Every prospect in active CRM should be assignable to exactly one stage at any given time.</p>
+<hr>
+<h2>7. Step-by-Step Process</h2>
+<p><strong>How to move a new organization from unknown to qualified, researched, and contacted:</strong></p>
+<ol>
+<li>Identify the organization as a candidate (rights holder-side or brand-side).</li>
+<li>Conduct company research (Section 5.2) — minimum 15–30 minutes, using Phase 01–03 frameworks.</li>
+<li>Score the prospect against F.A.T.N. (Section 6).</li>
+<li>If qualified (6+/8), log in CRM with research notes and set pipeline stage to &quot;Qualified.&quot;</li>
+<li>Identify the correct outreach channel(s) and decision-maker.</li>
+<li>Draft outreach referencing specific, real research — never a generic template with only the name swapped.</li>
+<li>Send outreach, update CRM stage to &quot;Contacted,&quot; and set a specific follow-up date.</li>
+<li>Track response and update pipeline stage accordingly.</li>
+</ol>
+<hr>
+<h2>8. Real Industry Examples</h2>
+<p><strong>A university whose multimedia rights agreement with an incumbent commercial rights company is approaching its contract renewal window</strong> — a textbook Timing signal in rights holder-side prospecting: contract expiration dates are publicly inferable in many cases and represent a natural point of receptiveness to a new conversation.</p>
+<p><strong>A brand that has recently entered a new geographic market or launched a new product line targeting a younger demographic</strong> — a textbook Need and Timing signal in brand-side prospecting, since sponsorship is frequently used specifically to accelerate market entry or reach a demographic a brand&#39;s existing channels don&#39;t fully cover.</p>
+<p><strong>A venue undergoing a new construction or major renovation project</strong> — a strong Timing signal for rights holder-side prospecting, since new or renovated venues frequently represent a moment when commercial rights programs are being reconsidered or built from scratch (echoing the Oak View Group case studies from Phase 03).</p>
+<p><strong>A brand that already sponsors a directly comparable property to one of VYRO&#39;s clients (e.g., a competing university&#39;s athletic program)</strong> — a strong Fit signal for brand-side prospecting, since demonstrated category interest and budget allocation are the clearest available evidence a brand is likely to consider a comparable opportunity.</p>
+<hr>
+<h2>9. VYRO Best Practices</h2>
+<ul>
+<li><strong>Never send outreach without completed research</strong> — this is a firm rule, not a guideline, and it&#39;s the single most common shortcut new employees are tempted to take under pipeline-volume pressure.</li>
+<li><strong>Keep CRM updates current in real time, not in a weekly batch</strong> — pipeline stage accuracy degrades quickly once updates are deferred, and stale data leads to real missed follow-ups.</li>
+<li><strong>Treat a &quot;no&quot; or non-response as a data point, not a failure</strong> — log the outcome and the likely reason (poor timing, wrong contact, genuine lack of fit) so future prospecting improves.</li>
+<li><strong>Prioritize a shorter, well-qualified list over a longer, unqualified one</strong> — F.A.T.N. discipline exists specifically to protect against pipeline volume that looks impressive but converts poorly.</li>
+<li><strong>Personalize the ask, not just the greeting</strong> — swapping in a prospect&#39;s name at the top of a generic template is not personalization; referencing a specific, real detail about their situation is.</li>
+</ul>
+<hr>
+<h2>10. Common Mistakes</h2>
+<ul>
+<li><strong>Skipping research to increase outreach volume</strong> — this consistently produces lower response rates, not higher total results, despite feeling more productive in the moment.</li>
+<li><strong>Confusing rights holder-side and brand-side prospecting logic</strong> — using a brand-side pitch angle on a rights holder prospect (or vice versa) signals a fundamental misunderstanding of what&#39;s actually being asked of the prospect.</li>
+<li><strong>Letting CRM data go stale</strong> — &quot;I&#39;ll update it later&quot; reliably becomes &quot;I don&#39;t remember what happened with this prospect.&quot;</li>
+<li><strong>Treating every contact at an organization as equally useful</strong> — reaching someone without real authority wastes a research and outreach cycle that could have gone to the actual decision-maker.</li>
+<li><strong>Using the same generic template across dozens of prospects</strong> — this is detectable by recipients and actively damages response rates and VYRO&#39;s professional reputation.</li>
+</ul>
+<hr>
+<h2>11. Professional Tips</h2>
+<ul>
+<li>Build outreach in small batches (10–15 at a time) with real research behind each, rather than attempting to draft all 50 cold emails in one generic pass — quality degrades quickly past a certain batch size without a break.</li>
+<li>Keep a running &quot;signals&quot; list of common Timing indicators (contract renewals, new venues, leadership changes, competitor moves) — recognizing these quickly becomes a genuine competitive advantage over time.</li>
+<li>Practice cold call openings out loud before the first live call of the day — the difference between a confident, natural opening and a hesitant, script-reading one is immediately audible to the person answering the phone.</li>
+</ul>
+<hr>
+<h2>12. Templates</h2>
+<h3>Template: Prospect Qualification Card</h3>
+<pre><code>ORGANIZATION: _______________________     SIDE: [ ] Rights Holder  [ ] Brand
+
+RESEARCH SUMMARY:
+
+
+F.A.T.N. SCORE:
+Fit: __ /2   Authority: __ /2   Timing: __ /2   Need: __ /2   TOTAL: __ /8
+
+DECISION-MAKER IDENTIFIED: _______________________
+OUTREACH CHANNEL: [ ] Cold Email  [ ] Cold Call  [ ] LinkedIn
+PIPELINE STAGE: _______________________
+</code></pre>
+<h3>Template: Cold Email Skeleton</h3>
+<pre><code>SUBJECT: [specific, honest, references real research]
+
+[One sentence: who you are + why you&#39;re reaching out to THIS organization specifically]
+[One sentence: the specific, real signal or detail that prompted this outreach]
+[One sentence: a low-friction, specific ask]
+
+[Sign-off]
+</code></pre>
+<hr>
+<h2>13. Checklists</h2>
+<p><strong>Pre-Outreach Checklist</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Company research completed (minimum 15–30 minutes)</li>
+<li><input disabled="" type="checkbox"> F.A.T.N. score calculated and ≥6/8</li>
+<li><input disabled="" type="checkbox"> Correct decision-maker identified (not a generic contact)</li>
+<li><input disabled="" type="checkbox"> Correct rights holder-side vs. brand-side framing confirmed</li>
+<li><input disabled="" type="checkbox"> Outreach references specific, real research — not a generic template</li>
+<li><input disabled="" type="checkbox"> CRM entry created with research notes and pipeline stage set</li>
+</ul>
+<hr>
+<h2>14. Worksheets</h2>
+<p><strong>Worksheet: Signal Log</strong></p>
+<p>As you build your 200-company prospect list, keep a running log of the specific Timing/Need signal you identified for each — this worksheet becomes part of your homework submission and is a direct input into Lesson 4.2&#39;s discovery preparation.</p>
+<hr>
+<h2>15. Homework</h2>
+<ol>
+<li><strong>Build a qualified prospect list of 200 companies</strong>, split across rights holder-side and brand-side prospects (a reasonable mix, not required to be exactly even), each with a completed Prospect Qualification Card.</li>
+<li><strong>Write 50 cold emails</strong>, each referencing specific, real research — no generic templates with only the name changed.</li>
+<li><strong>Write 20 LinkedIn outreach messages</strong>, each personalized to a specific, real detail about the prospect.</li>
+<li><strong>Complete the Signal Log worksheet</strong> alongside the prospect list.</li>
+</ol>
+<p>Deliverable format: one document containing the full prospect list with Qualification Cards, all 50 cold emails, all 20 LinkedIn messages, and the Signal Log.</p>
+<hr>
+<h2>16. Manager Coaching Notes</h2>
+<p><strong>Purpose of this lesson in the employee&#39;s development:</strong> This lesson tests discipline as much as skill — whether the employee will actually do the research and qualification work consistently across 200 prospects, or whether quality degrades as volume increases. Managers should specifically spot-check outreach from later in the list (prospects 150–200), not just the first ten, where effort most commonly drops off.</p>
+<p><strong>Discussion questions to ask in review:</strong></p>
+<ul>
+<li>&quot;Pick five prospects from your list at random — walk me through the specific signal that qualified each one.&quot;</li>
+<li>&quot;Show me one rights holder-side and one brand-side cold email — what&#39;s different about how you framed the ask in each?&quot;</li>
+<li>&quot;Which prospects on your list scored lowest on F.A.T.N. that you still included, and why?&quot;</li>
+</ul>
+<p><strong>Expected answers:</strong> A proficient employee can speak specifically and confidently about any prospect on their list, not just their strongest examples, and can clearly articulate the different framing required for rights holder-side versus brand-side outreach.</p>
+<p><strong>Coaching tips:</strong></p>
+<ul>
+<li>If quality visibly drops in the back half of the 200-prospect list, have the employee redo a sample from that section before accepting the homework — this reinforces that the standard applies to the full list, not just the beginning.</li>
+<li>If cold emails read as generic despite claimed research, ask the employee to explain the specific signal behind three emails verbally — if they can&#39;t, the research likely wasn&#39;t actually done.</li>
+</ul>
+<p><strong>Common employee mistakes to watch for:</strong></p>
+<ul>
+<li>Declining research quality as list volume increases.</li>
+<li>Confusing rights holder-side and brand-side messaging.</li>
+<li>Generic LinkedIn connection notes that could apply to any prospect.</li>
+</ul>
+<p><strong>Evaluation checklist:</strong> see Grading Rubric (Section 20).</p>
+<hr>
+<h2>18. Practical Exercise</h2>
+<p><strong>Exercise: Research-to-Outreach Sprint</strong></p>
+<p>Manager assigns one unfamiliar prospect (rights holder-side or brand-side). Employee has 30 minutes to complete research, calculate a F.A.T.N. score, identify a likely decision-maker, and draft one cold email and one LinkedIn message.</p>
+<p>Evaluation focus: research depth within the time limit, accuracy of F.A.T.N. scoring, and whether the drafted outreach reflects specific, real research rather than generic language.</p>
+<hr>
+<h2>19. Role-Play Exercise</h2>
+<p><strong>Scenario:</strong> You&#39;re making a cold call to a prospective rights holder client. Your manager plays a gatekeeper (an assistant or front-desk contact) who initially resists connecting you to the actual decision-maker.</p>
+<p><strong>Manager&#39;s role-play brief:</strong> Ask &quot;what is this regarding?&quot; and push back at least once with something like &quot;they&#39;re not taking sales calls right now.&quot; Only relent if the employee responds professionally, persistently, and with a specific, credible reason for the call — not if they become pushy or vague.</p>
+<p><strong>What &quot;good&quot; looks like:</strong> The employee stays professional and persistent without being aggressive, clearly and briefly states a specific, credible reason for the call, and either secures the connection or professionally secures a specific alternative (a callback time, an email address, a referral to the right contact).</p>
+<hr>
+<h2>20. Grading Rubric</h2>
+<p>Scored out of 100.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+<th>Exemplary (full points)</th>
+<th>Proficient</th>
+<th>Developing</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research</td>
+<td>10</td>
+<td>All 200 prospects show genuine, specific research, including the back half of the list</td>
+<td>Minor consistency drop-off</td>
+<td>Noticeable quality decline past prospect ~100</td>
+<td>Research superficial or missing throughout</td>
+</tr>
+<tr>
+<td>Business Understanding</td>
+<td>10</td>
+<td>Correctly distinguishes rights holder-side and brand-side framing throughout</td>
+<td>Minor confusion</td>
+<td>Frequent confusion</td>
+<td>Sides consistently confused</td>
+</tr>
+<tr>
+<td>Commercial Strategy</td>
+<td>10</td>
+<td>F.A.T.N. scoring is accurate and well-reasoned across the full list</td>
+<td>Mostly accurate</td>
+<td>Inconsistent reasoning</td>
+<td>Scoring not meaningfully applied</td>
+</tr>
+<tr>
+<td>Critical Thinking</td>
+<td>10</td>
+<td>Signal Log identifies real, specific, plausible signals for each prospect</td>
+<td>Mostly specific</td>
+<td>Some generic signals</td>
+<td>Signals generic or absent</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>10</td>
+<td>Cold emails and LinkedIn messages are clear, specific, professional</td>
+<td>Minor generic phrasing</td>
+<td>Frequently generic</td>
+<td>Templated throughout</td>
+</tr>
+<tr>
+<td>Professionalism</td>
+<td>10</td>
+<td>On time, correctly formatted, CRM-ready</td>
+<td>Minor formatting gaps</td>
+<td>Notable gaps</td>
+<td>Unprofessional or incomplete</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>10</td>
+<td>Role-play handles gatekeeper resistance professionally and persistently</td>
+<td>Mostly professional</td>
+<td>Becomes pushy or gives up too easily</td>
+<td>Unable to navigate the scenario</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>10</td>
+<td>Pipeline stages and Qualification Cards fully and correctly completed</td>
+<td>1–2 errors</td>
+<td>3–4 errors</td>
+<td>5+ errors or missing</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>10</td>
+<td>Research-to-Outreach Sprint completed accurately within the time limit</td>
+<td>Mostly accurate</td>
+<td>Several gaps under time pressure</td>
+<td>Unable to complete under time pressure</td>
+</tr>
+<tr>
+<td>Overall Quality</td>
+<td>10</td>
+<td>Publish-ready, CRM-ready, no manager edits needed</td>
+<td>Minor edits needed</td>
+<td>Substantial rework needed</td>
+<td>Does not meet bar</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum passing score for this lesson: 75/100.</strong></p>
+<hr>
+<h2>21. Reflection Questions</h2>
+<ol>
+<li>Where did your research quality hold up best, and where did it start to slip as you moved through 200 prospects? What does that tell you about your own working process?</li>
+<li>Which outreach channel (email, call, LinkedIn) do you expect to be most effective for rights holder-side prospecting versus brand-side prospecting, and why?</li>
+<li>Describe a prospect you almost added to your list but excluded based on F.A.T.N. — what was the deciding factor?</li>
+<li>How does treating a &quot;no&quot; as a data point, rather than a failure, change how you&#39;ll approach prospecting long-term?</li>
+</ol>
+<hr>
+<h2>22. Recommended Reading</h2>
+<ul>
+<li>General B2B sales prospecting and qualification methodology (any reputable source on lead qualification frameworks), read specifically to compare against F.A.T.N. and identify what translates to commercial partnerships prospecting</li>
+<li>Any publicly available CRM pipeline-stage best practices resource, to reinforce disciplined stage management</li>
+<li>Recent contract-renewal or venue-construction news relevant to your prospect list, as live practice in spotting Timing signals</li>
+</ul>
+<hr>
+<h2>23. Key Takeaways</h2>
+<ul>
+<li>VYRO prospects on two sides — rights holders and brands — and each requires different framing, research focus, and messaging.</li>
+<li>Qualification (Fit, Authority, Timing, Need) should happen before outreach, not after a poor response rate reveals it was skipped.</li>
+<li>Company research is a non-negotiable, time-bound step (15–30 minutes minimum) before any outreach is sent.</li>
+<li>CRM and pipeline discipline, kept current in real time, is what makes a sales process manageable and improvable over time.</li>
+<li>Specificity beats volume across every outreach channel — a smaller, well-researched list consistently outperforms a larger, generic one.</li>
+</ul>
+<hr>
+<p><strong>Next in Phase 04:</strong> Lesson 4.2 — Discovery, Negotiation &amp; Closing: Winning the Deal (draft pending your review of this lesson).</p>
+</article>
+    <section class="quiz" aria-label="Knowledge Check">
+    <div class="quiz-head">
+      <span class="quiz-eyebrow">Knowledge Check</span>
+      <h2 class="quiz-title">Test What You Just Learned</h2>
+    </div>
+    <div class="quiz-questions"><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q1</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">What does the "T" in F.A.T.N. stand for?</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Target</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Timing</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Territory</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Trust</span></button></div>
+        </div><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q2</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">Brand-side prospecting primarily asks a prospect to:</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Hand over commercial rights authority</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Invest marketing budget</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Sign a naming rights agreement</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Join a federated governing body</span></button></div>
+        </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q3</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Why is a shorter, well-qualified prospect list generally more effective than a longer, unqualified one?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that unqualified outreach produces lower response rates and wastes downstream time (discovery meetings that go nowhere), while qualified prospects convert at meaningfully higher rates despite lower volume.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q4</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Give an example of a Timing signal for rights holder-side prospecting and a different example for brand-side prospecting.</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>rights holder-side — e.g., an incumbent commercial rights agreement nearing renewal, or new venue construction; brand-side — e.g., a new market entry, product launch, or a competitor's category becoming available.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q5</span><span class="quiz-q-type">Applied</span></div>
+        <p class="quiz-q-text">You've identified a strong prospect but can only find a general info@ contact, no named decision-maker. What should you do before sending outreach?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that Authority is unconfirmed — the employee should invest additional research (LinkedIn, org charts, press mentions) to identify a real decision-maker before outreach, rather than sending to a generic contact.</div>
+      </div></div>
+    <div class="quiz-footer">
+      <div class="quiz-score">Multiple choice score: <span class="quiz-score-val">0</span> / 2</div>
+      <div class="quiz-passing"><strong>Passing score:</strong> 4 of 5 correct, with Questions 3 and 4 answered with full reasoning.</div>
+    </div>
+  </section>
+    <div class="pagenav">
+      <a class="pagenav-link prev" href="p03-cert.html"><span class="pagenav-dir">← Previous</span><span class="pagenav-title">Certification</span></a>
+      <a class="pagenav-link next" href="p04-l2.html"><span class="pagenav-dir">Next →</span><span class="pagenav-title">Lesson 4.2</span></a>
+    </div>
+  </main>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Course Contents</span>
+        <button class="menu-toggle menu-toggle-close" id="menuCloseBtn" aria-label="Close navigation">✕</button>
+      </div>
+      <div class="nav-scroll"><a class="nav-item nav-home" href="index.html">Overview</a><details class="nav-group">
+        <summary><span class="nav-phase-num">01</span><span class="nav-phase-title">How Commercial Partnerships Actually Work</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p01-l1.html">Lesson 1.1</a><a class="nav-item" href="p01-l2.html">Lesson 1.2</a><a class="nav-item" href="p01-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">02</span><span class="nav-phase-title">The Language of Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p02-l1.html">Lesson 2.1</a><a class="nav-item" href="p02-l2.html">Lesson 2.2</a><a class="nav-item" href="p02-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">03</span><span class="nav-phase-title">Study Real Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p03-l1.html">Lesson 3.1</a><a class="nav-item" href="p03-l2.html">Lesson 3.2</a><a class="nav-item" href="p03-cert.html">Certification</a></div>
+      </details><details class="nav-group" open>
+        <summary><span class="nav-phase-num">04</span><span class="nav-phase-title">Professional Sales</span></summary>
+        <div class="nav-items"><a class="nav-item active" href="p04-l1.html">Lesson 4.1</a><a class="nav-item" href="p04-l2.html">Lesson 4.2</a><a class="nav-item" href="p04-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">05</span><span class="nav-phase-title">Marketing</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p05-l1.html">Lesson 5.1</a><a class="nav-item" href="p05-l2.html">Lesson 5.2</a><a class="nav-item" href="p05-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">06</span><span class="nav-phase-title">Commercial Assets</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p06-l1.html">Lesson 6.1</a><a class="nav-item" href="p06-l2.html">Lesson 6.2</a><a class="nav-item" href="p06-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">07</span><span class="nav-phase-title">Sponsorship Valuation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p07-l1.html">Lesson 7.1</a><a class="nav-item" href="p07-l2.html">Lesson 7.2</a><a class="nav-item" href="p07-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">08</span><span class="nav-phase-title">Sponsorship Packages</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p08-l1.html">Lesson 8.1</a><a class="nav-item" href="p08-l2.html">Lesson 8.2</a><a class="nav-item" href="p08-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">09</span><span class="nav-phase-title">Partnership Activation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p09-l1.html">Lesson 9.1</a><a class="nav-item" href="p09-l2.html">Lesson 9.2</a><a class="nav-item" href="p09-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">10</span><span class="nav-phase-title">Client Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p10-l1.html">Lesson 10.1</a><a class="nav-item" href="p10-l2.html">Lesson 10.2</a><a class="nav-item" href="p10-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">11</span><span class="nav-phase-title">Commercial Rights Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p11-l1.html">Lesson 11.1</a><a class="nav-item" href="p11-l2.html">Lesson 11.2</a><a class="nav-item" href="p11-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">12</span><span class="nav-phase-title">Business Development</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p12-l1.html">Lesson 12.1</a><a class="nav-item" href="p12-l2.html">Lesson 12.2</a><a class="nav-item" href="p12-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">13</span><span class="nav-phase-title">Finance</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p13-l1.html">Lesson 13.1</a><a class="nav-item" href="p13-l2.html">Lesson 13.2</a><a class="nav-item" href="p13-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">14</span><span class="nav-phase-title">Building VYRO</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p14-l1.html">Lesson 14.1</a><a class="nav-item" href="p14-l2.html">Lesson 14.2</a><a class="nav-item" href="p14-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">15</span><span class="nav-phase-title">Executive Leadership</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p15-l1.html">Lesson 15.1</a><a class="nav-item" href="p15-l2.html">Lesson 15.2</a><a class="nav-item" href="p15-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">16</span><span class="nav-phase-title">Capstone Project</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p16-brief.html">Brief + Stage 16.1</a><a class="nav-item" href="p16-stage-2.html">Stage 16.2</a><a class="nav-item" href="p16-stage-3.html">Stage 16.3</a><a class="nav-item" href="p16-stage-4.html">Stage 16.4</a><a class="nav-item" href="p16-stage-5.html">Stage 16.5</a><a class="nav-item" href="p16-certification.html">Graduation</a></div>
+      </details></div>
+    </div>
+  </nav>
+</div>
+</div>
+<script>
+var menuBtn = document.getElementById('menuToggle');
+var closeBtn = document.getElementById('menuCloseBtn');
+function openMenu(){ document.getElementById('sidebar').classList.add('open'); document.body.classList.add('menu-open'); }
+function closeMenu(){ document.getElementById('sidebar').classList.remove('open'); document.body.classList.remove('menu-open'); }
+menuBtn.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+document.querySelectorAll('.sidebar .nav-item').forEach(function(a){
+  a.addEventListener('click', closeMenu);
+});
+document.querySelectorAll('.doc pre, .doc table').forEach(function(el){
+  var wrap = el.tagName === 'TABLE' ? el : el;
+  function check(){
+    if (wrap.scrollWidth > wrap.clientWidth + 2) wrap.classList.add('has-overflow');
+    else wrap.classList.remove('has-overflow');
+  }
+  check();
+  window.addEventListener('resize', check);
+  wrap.addEventListener('scroll', function(){
+    var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+    wrap.classList.toggle('scrolled-end', atEnd);
+  });
+});
+document.querySelectorAll('.quiz-q-mc').forEach(function(q){
+  var quizEl = q.closest('.quiz');
+  var scoreEl = quizEl ? quizEl.querySelector('.quiz-score-val') : null;
+  q.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (q.classList.contains('answered')) return;
+      q.classList.add('answered');
+      var correct = btn.getAttribute('data-correct') === 'true';
+      btn.classList.add(correct ? 'correct' : 'incorrect');
+      if (!correct) {
+        var correctBtn = q.querySelector('[data-correct="true"]');
+        if (correctBtn) correctBtn.classList.add('reveal-correct');
+      } else if (scoreEl) {
+        scoreEl.textContent = String(Number(scoreEl.textContent) + 1);
+      }
+      q.querySelectorAll('.quiz-option').forEach(function(b){ b.disabled = true; });
+    });
+  });
+});
+document.querySelectorAll('.quiz-reveal-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var box = btn.nextElementSibling;
+    var hidden = box.hasAttribute('hidden');
+    if (hidden) { box.removeAttribute('hidden'); btn.textContent = 'Hide Expected Answer'; }
+    else { box.setAttribute('hidden',''); btn.textContent = 'Show Expected Answer'; }
+  });
+});
+</script>
+</body>
+</html>

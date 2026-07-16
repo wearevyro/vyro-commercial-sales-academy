@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 3.1 — Analyzing Rights Holder Partnerships — Leagues, Teams &amp; Governing Bodies · VYRO Commercial Sales Academy</title>
+<meta name="description" content="VYRO Commercial Sales Academy — internal certification program for commercial partnerships professionals.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231B2A56%22/><text x=%2250%25%22 y=%2261%25%22 font-size=%2258%22 fill=%22%23FFFFFF%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22900%22>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F2F4F8; --gold-deep:#E7EAF1;
+  --cream:#FFFFFF; --cream-2:#EEF1F6; --cream-3:#E3E7EF;
+  --ink:#16213D; --ink-mute:rgba(22,33,61,0.64); --ink-faint:rgba(22,33,61,0.42);
+  --line:rgba(22,33,61,0.12); --line-strong:rgba(22,33,61,0.22);
+  --accent:#1B2A56; --accent-deep:#12203F; --accent-soft:rgba(27,42,86,0.08);
+  --success:#1E7A4C; --success-soft:rgba(30,122,76,0.1);
+  --danger:#B3392C; --danger-soft:rgba(179,57,44,0.1);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Anton', 'Archivo Black', sans-serif;
+  --font-badge: 'Baloo 2', 'Inter', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--gold);color:var(--ink);font-family:var(--font);}
+body{-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle at 8px 8px, rgba(255,255,255,0.35) 2px, transparent 2px);background-size:26px 26px;}
+a{color:inherit;text-decoration:none;}
+.frame{padding:14px;min-height:100vh;}
+.shell{display:flex;flex-direction:column;min-height:calc(100vh - 28px);background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(33,20,6,0.28);position:relative;}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 40px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--cream);font-family:var(--font-badge);font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 3px 0 var(--accent-deep);transform:rotate(-4deg);}
+.brand-text{font-family:var(--font-badge);font-size:15px;font-weight:800;letter-spacing:1.5px;line-height:1.5;color:var(--ink);}
+.brand-text small{font-size:10px;font-weight:600;letter-spacing:0.5px;color:var(--ink-mute);text-transform:none;font-family:var(--font);}
+
+.menu-toggle{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);border:none;padding:13px 22px;border-radius:30px;font-family:var(--font-badge);font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,0.35);cursor:pointer;transition:transform .12s;flex:none;}
+.menu-toggle:hover{transform:translateY(-1px);}
+.menu-toggle-icon{font-size:15px;line-height:1;}
+.menu-toggle-close{padding:0;width:42px;height:42px;justify-content:center;border-radius:12px;background:var(--cream-2);color:var(--ink);box-shadow:0 2px 0 var(--line-strong);}
+
+.sidebar{
+  width:100%;position:fixed;inset:0;z-index:60;background:var(--cream-3);
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;
+  transition:opacity .18s ease, visibility .18s ease;
+}
+.sidebar.open{opacity:1;visibility:visible;}
+body.menu-open{overflow:hidden;}
+.sidebar-inner{display:flex;flex-direction:column;height:100%;max-width:640px;margin:0 auto;width:100%;}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.sidebar-title{font-family:var(--font-display);font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.nav-scroll{overflow-y:auto;flex:1;padding:20px 28px 40px;}
+.nav-item{display:block;padding:9px 14px;border-radius:9px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.nav-item:hover{background:rgba(33,20,6,0.05);color:var(--ink);}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:700;transform:rotate(-1deg);box-shadow:0 2px 0 var(--accent-deep);}
+.nav-home{margin-bottom:14px;font-weight:800;color:var(--ink);font-family:var(--font-badge);letter-spacing:0.3px;font-size:14.5px;padding:11px 14px;background:var(--cream-2);border-radius:10px;}
+.nav-home.active{background:var(--accent);}
+.nav-group{margin-bottom:10px;background:var(--cream-2);border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+.nav-group[open]{border-color:var(--accent);box-shadow:0 3px 0 rgba(228,35,31,0.18);}
+.nav-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:13px;color:var(--ink-mute);user-select:none;}
+.nav-group summary::-webkit-details-marker{display:none;}
+.nav-group summary::after{content:"+";margin-left:auto;font-family:var(--font-display);font-size:16px;color:var(--ink-faint);}
+.nav-group[open] summary::after{content:"–";color:var(--accent);}
+.nav-group summary:hover{color:var(--ink);}
+.nav-group[open] summary{color:var(--ink);font-weight:700;}
+.nav-phase-num{font-family:var(--font-display);color:var(--accent);font-weight:400;font-size:19px;width:26px;flex:none;}
+.nav-phase-title{flex:1;line-height:1.3;font-family:var(--font-badge);font-weight:600;}
+.nav-items{padding:2px 14px 10px 48px;border-top:1px dashed var(--line-strong);margin-top:2px;padding-top:10px;}
+.nav-items .nav-item{font-size:12.5px;padding:7px 10px;}
+.content{flex:1;min-width:0;padding:56px 60px 100px;max-width:900px;margin:0 auto;width:100%;}
+.eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:16px;transform:rotate(-1.5deg);}
+.doc h1{font-family:var(--font-display);font-weight:400;letter-spacing:0.3px;font-size:38px;line-height:1.1;margin:0 0 22px;color:var(--ink);text-transform:uppercase;}
+.doc h2{font-family:var(--font-display);font-weight:400;font-size:23px;letter-spacing:0.2px;margin:44px 0 16px;padding-top:10px;border-top:2px dashed var(--line-strong);color:var(--ink);}
+.doc h2:first-of-type{border-top:none;padding-top:0;}
+.doc h3{font-size:17px;font-weight:700;margin:30px 0 10px;color:var(--ink);}
+.doc h4{font-size:13px;margin:22px 0 8px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
+.doc p{font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);margin:0 0 16px;}
+.doc strong{color:var(--ink);font-weight:700;}
+.doc em{color:rgba(33,20,6,0.75);}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:22px;font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);}
+.doc li{margin-bottom:6px;}
+.doc li p{margin-bottom:4px;}
+.doc hr{border:none;border-top:2px dashed var(--line-strong);margin:36px 0;}
+.doc code{font-family:'SF Mono',Consolas,monospace;font-size:13px;background:var(--cream-2);padding:2px 6px;border-radius:4px;color:var(--accent-deep);}
+.doc pre{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch;transition:mask-image .15s;}
+.doc pre code{background:none;padding:0;color:#E7EAF2;font-size:13px;line-height:1.6;}
+.doc pre.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:13.5px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--cream-2);border-radius:10px;}
+.doc table.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);}
+.doc th{text-align:left;color:var(--accent-deep);font-size:11px;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;padding:10px 14px;border-bottom:2px solid var(--line-strong);white-space:nowrap;}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--line);color:rgba(33,20,6,0.78);vertical-align:top;}
+.doc tr:hover td{background:rgba(228,35,31,0.04);}
+.doc blockquote{margin:0 0 20px;padding:4px 20px;border-left:3px solid var(--accent);color:var(--ink-mute);font-style:italic;}
+.doc a{color:var(--accent-deep);text-decoration:underline;text-decoration-color:rgba(228,35,31,0.4);}
+.pagenav{display:flex;justify-content:space-between;gap:20px;margin-top:60px;padding-top:28px;border-top:2px dashed var(--line-strong);}
+.pagenav-link{flex:1;padding:16px 18px;border:1px solid var(--line);border-radius:14px;transition:border-color .15s,transform .15s;background:var(--cream-2);}
+.pagenav-link:hover{border-color:var(--accent);transform:translateY(-2px);}
+.pagenav-link.next{text-align:right;}
+.pagenav-dir{display:block;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-weight:700;}
+.pagenav-title{display:block;font-size:14px;font-weight:700;color:var(--ink);}
+
+/* Quiz */
+.quiz{margin-top:56px;padding:36px 36px 32px;background:var(--cream-2);border:1px solid var(--line);border-radius:20px;}
+.quiz-head{margin-bottom:26px;}
+.quiz-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-title{font-family:var(--font-display);font-weight:400;font-size:24px;letter-spacing:0.2px;margin:0;color:var(--ink);}
+.quiz-questions{display:flex;flex-direction:column;gap:22px;}
+.quiz-q{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
+.quiz-q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.quiz-q-num{font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--accent);}
+.quiz-q-type{font-family:var(--font-badge);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);background:var(--cream-2);padding:3px 10px;border-radius:20px;}
+.quiz-q-text{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 16px;font-weight:600;}
+.quiz-options{display:flex;flex-direction:column;gap:8px;}
+.quiz-option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--cream);font-family:var(--font);font-size:14px;line-height:1.5;color:var(--ink-mute);cursor:pointer;transition:border-color .15s,background .15s;}
+.quiz-option:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft);}
+.quiz-option:disabled{cursor:default;}
+.quiz-option-letter{font-family:var(--font-badge);font-weight:700;color:var(--ink-faint);flex:none;}
+.quiz-option-text{flex:1;}
+.quiz-option.correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.correct .quiz-option-letter{color:var(--success);}
+.quiz-option.incorrect{border-color:var(--danger);background:var(--danger-soft);color:var(--ink);}
+.quiz-option.incorrect .quiz-option-letter{color:var(--danger);}
+.quiz-option.reveal-correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.reveal-correct .quiz-option-letter{color:var(--success);}
+.quiz-textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--font);font-size:14px;line-height:1.6;color:var(--ink);background:var(--cream);resize:vertical;margin-bottom:10px;}
+.quiz-textarea:focus{outline:none;border-color:var(--accent);}
+.quiz-reveal-btn{font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--accent);background:var(--accent-soft);border:none;padding:9px 16px;border-radius:20px;cursor:pointer;}
+.quiz-reveal-btn:hover{background:var(--accent);color:#fff;}
+.quiz-expected{margin-top:12px;padding:14px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;font-size:13.5px;line-height:1.6;color:var(--ink-mute);}
+.quiz-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed var(--line-strong);}
+.quiz-score{font-family:var(--font-badge);font-size:13px;font-weight:700;color:var(--ink);}
+.quiz-score-val{color:var(--accent);}
+.quiz-passing{font-size:12.5px;color:var(--ink-mute);}
+
+/* Home page */
+.hero{padding:8px 0 40px;position:relative;}
+.hero-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;transform:rotate(-1.5deg);}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:56px;line-height:1;margin:0 0 20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.hero p.lead{font-size:17px;line-height:1.6;color:var(--ink-mute);max-width:640px;margin:0 0 32px;}
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.stat{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:16px 22px;min-width:110px;}
+.stat .num{font-family:var(--font-display);font-weight:400;font-size:32px;color:var(--accent);line-height:1;}
+.stat .label{font-size:11px;color:var(--ink-mute);margin-top:6px;letter-spacing:0.5px;font-weight:700;text-transform:uppercase;}
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px;}
+.phase-card{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:var(--cream-2);transition:border-color .15s,transform .15s,box-shadow .15s;}
+.phase-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 0 rgba(33,20,6,0.06);}
+.phase-card .pn{display:inline-block;font-family:var(--font-badge);color:#fff;background:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-bottom:10px;transform:rotate(-2deg);}
+.phase-card .pt{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3;color:var(--ink);}
+.phase-card .pd{font-size:12.5px;color:var(--ink-mute);line-height:1.5;}
+
+@media (max-width: 900px){
+  .frame{padding:0;}
+  .shell{border-radius:0;min-height:100vh;box-shadow:none;}
+  .topbar{padding:16px 20px;}
+  .brand-text{font-size:12px;}
+  .menu-toggle{padding:11px 16px;font-size:11px;}
+  .sidebar-head{padding:18px 20px;}
+  .nav-scroll{padding:16px 20px 40px;}
+  .content{padding:36px 20px 70px;}
+  .doc h1{font-size:27px;}
+  .doc h2{font-size:20px;}
+  .nav-item{padding:14px 16px;font-size:16px;}
+  .nav-items{padding:2px 12px 12px 20px;}
+  .nav-items .nav-item{padding:12px 10px;font-size:14.5px;}
+  .nav-group summary{padding:15px 16px;font-size:15px;}
+  .nav-home{margin-bottom:10px;}
+  .pagenav{flex-direction:column;}
+  .stat-row{gap:10px;}
+  .stat{padding:12px 16px;min-width:90px;}
+  .hero h1{font-size:36px;}
+  .phase-grid{grid-template-columns:1fr;}
+  .quiz{padding:26px 20px 24px;}
+  .quiz-q{padding:16px 16px;}
+  .quiz-footer{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      <span class="brand-text">VYRO<br><small>Commercial Sales Academy</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">MENU <span class="menu-toggle-icon">☰</span></button>
+  </header>
+  <main class="content">
+    <div class="eyebrow">Phase 03 · Study Real Commercial Partnerships</div>
+    <article class="doc"><h1>Lesson 3.1 — Analyzing Rights Holder Partnerships: Leagues, Teams &amp; Governing Bodies</h1>
+<hr>
+<h2>1. Lesson Overview</h2>
+<p>Phases 01 and 02 gave you the map and the vocabulary. This phase teaches the skill that actually separates a commercial professional from someone who just knows the terminology: <strong>case study analysis</strong> — the ability to look at a real, published partnership and correctly reverse-engineer why it happened, what it&#39;s really worth, and how it could be made better.</p>
+<p>This is not a research exercise for its own sake. Every proposal VYRO builds is, at its core, an argument by analogy: &quot;here&#39;s a comparable deal, here&#39;s why it worked, here&#39;s why a similar structure will work for you.&quot; An employee who has genuinely studied fifty real partnerships has fifty reference points to draw on in a client pitch. An employee who hasn&#39;t has none — and it shows immediately in the specificity (or vagueness) of their proposals.</p>
+<p>This lesson introduces the Six-Question Case Study Framework and applies it to rights holders at four distinct structural archetypes: single-entity leagues and teams (NBA, NFL), federated multi-institution bodies (NCAA), globally governed multi-sport properties with unusually strict exclusivity rules (the Olympics), and dual-layer series/team structures in motorsport (Formula 1, MotoGP). Lesson 3.2 shifts focus to VYRO&#39;s direct peer set — the commercial rights companies representing these and similar properties.</p>
+<hr>
+<h2>2. Learning Objectives</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ol>
+<li>Apply the Six-Question Case Study Framework to any real, published partnership announcement.</li>
+<li>Distinguish four structural archetypes of rights holders — single-entity, federated/multi-institution, globally governed multi-sport, and dual-layer series/team — and explain how each changes how a partnership gets structured.</li>
+<li>Analyze a partnership involving the NBA, NFL, NCAA, the Olympics, MotoGP, or Formula 1 and correctly identify the business objective being solved for the brand.</li>
+<li>Propose at least one specific way an analyzed partnership could be made more valuable to both sides.</li>
+<li>Build a complete written case study from a real announcement, in a format usable in a future VYRO proposal.</li>
+</ol>
+<hr>
+<h2>3. Business Context</h2>
+<p>VYRO employees are frequently asked, in discovery calls and in internal strategy sessions, some version of: &quot;has this worked anywhere else?&quot; The honest, credible answer requires a library of real examples — not because VYRO copies other people&#39;s deals, but because pattern recognition across real partnerships is what allows a commercial professional to correctly anticipate what a brand will say yes to, what a rights holder will realistically be able to deliver, and where the friction points in a negotiation are likely to appear.</p>
+<p>This lesson is also where Phase 01&#39;s ecosystem map and Phase 02&#39;s terminology stop being abstract and start being applied to messy, real, sometimes ambiguous public information — which is exactly the condition VYRO employees operate under with every new prospect.</p>
+<hr>
+<h2>4. Why This Matters</h2>
+<ul>
+<li><strong>Proposals built on real analogues are more persuasive than proposals built on theory.</strong> &quot;Here&#39;s how a comparable brand structured a similar partnership with a similar property&quot; lands harder than &quot;we think this could work.&quot;</li>
+<li><strong>Case study analysis reveals patterns that aren&#39;t written down anywhere</strong> — the kinds of activation ideas that actually get funded, the category exclusivity fights that recur across an industry, the structural differences between how a league sells rights and how an individual team does.</li>
+<li><strong>Structural literacy prevents proposal mismatches.</strong> A pitch built for a single-entity rights holder (like an NFL team) will not work unmodified for a federated body like the NCAA, where authority is split across a national association, conferences, and individual schools. Missing this distinction produces proposals that get rejected for structural reasons that have nothing to do with the pitch&#39;s quality.</li>
+</ul>
+<hr>
+<h2>5. Core Lesson</h2>
+<h3>5.1 The Six-Question Case Study Framework</h3>
+<p>For every partnership you analyze, answer all six, in order:</p>
+<ol>
+<li><strong>Why did the brand invest?</strong> What specific business objective — not &quot;brand awareness&quot; in the abstract, but the actual underlying goal (market entry, customer acquisition in a defined segment, category leadership, talent/employer branding, community trust) — is this brand pursuing?</li>
+<li><strong>Why did the rights holder accept?</strong> What did the rights holder need — revenue, a specific brand association, category credibility, activation resources they couldn&#39;t fund themselves?</li>
+<li><strong>What business objective is being solved?</strong> Restate the deal, in one sentence, purely in terms of the problem it solves — this is the sentence you&#39;d use to pitch a similar structure to a new client.</li>
+<li><strong>What commercial assets were likely included?</strong> Using Phase 02&#39;s vocabulary, list the probable rights bundle (tier, category exclusivity, digital rights, hospitality, licensing, etc.) even where not explicitly disclosed.</li>
+<li><strong>What activation opportunities exist?</strong> How is (or could) this partnership actually be brought to life for fans — beyond the signed rights themselves?</li>
+<li><strong>How could this partnership become more valuable?</strong> This is the question that separates analysis from summary — every case study should end with a specific, concrete recommendation, not just a description of what happened.</li>
+</ol>
+<h3>5.2 Four Rights Holder Archetypes</h3>
+<p><strong>Single-Entity (NBA, NFL, and their member teams).</strong> A single organization controls its own commercial rights directly (at the league level) or through a clearly defined team structure (at the team level). Decision-making is comparatively fast and centralized. League-level deals typically grant rights across every team simultaneously; team-level deals are scoped to that team alone. Understanding which level a deal operates at is the first thing to identify.</p>
+<p><strong>Federated / Multi-Institution (NCAA).</strong> Commercial rights authority is split across a national governing association, individual conferences, and hundreds of individual member schools — each of which may separately sell some of its own commercial rights (this is precisely the situation VYRO exists to help individual schools navigate, as introduced in Phase 01). A &quot;NCAA partnership&quot; at the association level is structurally different from — and does not automatically include rights to — an individual school&#39;s or conference&#39;s commercial inventory.</p>
+<p><strong>Globally Governed, Multi-Sport (the Olympics).</strong> The IOC&#39;s top-tier global sponsorship program is one of the strictest category-exclusivity models in the entire industry: a single brand per product category, granted rights across every sport and every edition of the Games within the contract term, globally, simultaneously. This archetype teaches the outer edge of what category exclusivity can mean when a rights holder controls an entire multi-sport, multi-national ecosystem.</p>
+<p><strong>Dual-Layer Series/Team (Formula 1, MotoGP).</strong> As introduced in Phase 01, these properties have commercial rights operating at two layers simultaneously: the series itself (F1, MotoGP) sells its own global partnerships, while each individual team sells its own separate title and technical partnerships. A brand can enter this ecosystem at either layer — or both — and the two layers do not compete for the same rights, though they do compete for some of the same category budgets.</p>
+<h3>5.3 Why Structural Archetype Changes the Pitch</h3>
+<p>A proposal built for a single-entity team (fast decision-making, one signature needed) will move too fast and skip stakeholders if applied unmodified to a federated body like the NCAA, where a conference or individual school may need to separately weigh in. A proposal built assuming Olympic-level global category exclusivity will wildly overpromise if applied to a regional single-team deal, where exclusivity is naturally narrower. Recognizing the archetype before building the pitch prevents both of these failure modes.</p>
+<hr>
+<h2>6. Commercial Frameworks</h2>
+<h3>Framework: The Six-Question Case Study Framework (see 5.1)</h3>
+<p>Use this as the standard structure for every case study produced across this entire academy, not just this lesson — Phase 16&#39;s capstone case studies will use this exact framework.</p>
+<h3>Framework: Rights Holder Archetype Quadrant</h3>
+<pre><code>                 SINGLE DECISION-MAKER          MULTIPLE DECISION-MAKERS
+GLOBAL SCOPE     F1 / MotoGP (series level)     Olympics (IOC + National Committees)
+LOCAL/REGIONAL   NFL/NBA individual team          NCAA (association + conference + school)
+                 F1/MotoGP (team level)
+</code></pre>
+<p>Before analyzing any case study, place the rights holder in this quadrant — it predicts negotiation speed, the number of stakeholders you&#39;ll need to satisfy, and how exclusivity is likely to be scoped.</p>
+<hr>
+<h2>7. Step-by-Step Process</h2>
+<p><strong>How to build a full case study from a real announcement:</strong></p>
+<ol>
+<li>Read the announcement (and, where available, follow-up coverage) fully before analyzing anything.</li>
+<li>Identify the rights holder&#39;s archetype (Section 5.2 / Framework in Section 6).</li>
+<li>Answer all six questions from the Case Study Framework, in order, in writing.</li>
+<li>Cross-reference the deal against Phase 01&#39;s Six-Party Ecosystem Map — name every stakeholder you can identify or reasonably infer.</li>
+<li>Cross-reference the deal against Phase 02&#39;s terminology — correctly classify the tier and every commercial right involved.</li>
+<li>Write the final recommendation (Question 6) as a specific, actionable idea — not a vague &quot;they could do more activation.&quot;</li>
+</ol>
+<hr>
+<h2>8. Real Industry Examples</h2>
+<p><strong>NBA global partnership categories</strong> — illustrate single-entity, league-level deals granting a brand rights across every team simultaneously, typically justified by objectives like global market entry or category leadership at a scale no single team could offer alone.</p>
+<p><strong>NFL official sponsor categories and major in-season/postseason brand activity</strong> — illustrate how a single-entity league can bundle massive audience reach with high-visibility, calendar-anchored moments (the postseason, in particular) as a distinct value driver beyond regular-season exposure.</p>
+<p><strong>NCAA&#39;s association-level &quot;corporate champion/partner&quot; program, distinct from individual conference and school deals</strong> — the clearest real-world illustration of the federated archetype: an association-level partnership grants rights across NCAA championships and events, but explicitly does not include the commercial rights individual schools or conferences separately control and sell (often through their own commercial rights company, exactly the role VYRO plays for its clients).</p>
+<p><strong>The IOC&#39;s global top-tier sponsorship program</strong> — the clearest real-world illustration of the globally-governed, multi-sport archetype: single-category exclusivity enforced across every sport and every Games within the term, a structure so strict it is frequently cited industry-wide as the benchmark for what maximum category exclusivity looks like.</p>
+<p><strong>Formula 1 and MotoGP team-level title and technical partnerships, alongside series-level global partners</strong> — illustrate the dual-layer archetype directly: a brand can be a series-level global partner, a team-level title sponsor, or both, without either layer conflicting with the other, because they represent structurally distinct commercial rights.</p>
+<hr>
+<h2>9. VYRO Best Practices</h2>
+<ul>
+<li><strong>Always identify the rights holder&#39;s archetype before building a case study or a proposal</strong> — it changes your assumptions about decision speed, stakeholder count, and how narrowly or broadly exclusivity can realistically be scoped.</li>
+<li><strong>Never treat a league-level or association-level deal as automatically including team- or school-level rights</strong> — this is one of the most common structural misreadings a new analyst makes, and it directly mirrors the real confusion VYRO&#39;s clients (individual schools, in particular) experience before engaging VYRO.</li>
+<li><strong>Always end a case study with a specific recommendation (Question 6), not a summary.</strong> A case study that only describes what happened has no value in a future pitch; a case study that proposes a specific improvement becomes a reusable pitch idea.</li>
+<li><strong>Use the Olympics case as the reference point for &quot;maximum exclusivity&quot;</strong> and the single-entity team case as the reference point for &quot;narrow, fast-moving exclusivity&quot; when explaining exclusivity options to a new client — having both ends of the spectrum in mind makes these conversations concrete rather than abstract.</li>
+</ul>
+<hr>
+<h2>10. Common Mistakes</h2>
+<ul>
+<li><strong>Analyzing only the brand&#39;s press release language</strong> without independently reasoning through the business objective — press releases are marketing copy, not ground truth, and often obscure the real strategic reason behind a deal.</li>
+<li><strong>Confusing league/association-level rights with team/school-level rights</strong>, especially for the NCAA archetype.</li>
+<li><strong>Ending a case study with description instead of recommendation.</strong> &quot;This partnership includes signage and social content&quot; is not analysis; &quot;this partnership could be made more valuable by adding a co-branded content series targeting [specific audience gap]&quot; is.</li>
+<li><strong>Applying Olympic-level exclusivity assumptions to a much smaller, single-team deal</strong>, producing unrealistic client expectations.</li>
+<li><strong>Treating all fifty homework announcements with the same shallow pass</strong> rather than genuinely applying all six questions to each — managers should be able to tell the difference immediately.</li>
+</ul>
+<hr>
+<h2>11. Professional Tips</h2>
+<ul>
+<li>Keep a running personal &quot;pattern library&quot; as you complete case studies — note recurring activation ideas, recurring objection points, and recurring deal structures by archetype. This becomes a genuinely useful reference in live client work, not just a homework artifact.</li>
+<li>When a business objective isn&#39;t stated explicitly in an announcement, look for secondary signals: the brand&#39;s other recent marketing moves, the specific markets or products emphasized in the announcement&#39;s language, and the timing relative to a product launch or market entry.</li>
+<li>Practice writing Question 6 recommendations that are specific enough to include in an actual proposal — &quot;more activation&quot; is not specific; &quot;a limited-run co-branded product tied to the property&#39;s biggest annual event&quot; is.</li>
+</ul>
+<hr>
+<h2>12. Templates</h2>
+<h3>Template: Case Study Write-Up</h3>
+<pre><code>PARTNERSHIP: _______________________
+RIGHTS HOLDER ARCHETYPE: [ ] Single-Entity  [ ] Federated  [ ] Global Multi-Sport  [ ] Dual-Layer Series/Team
+
+1. Why did the brand invest?
+
+
+2. Why did the rights holder accept?
+
+
+3. One-sentence business objective summary:
+
+
+4. Commercial assets likely included (tier + rights, using Phase 02 vocabulary):
+
+
+5. Activation opportunities (existing or proposed):
+
+
+6. Recommendation — how could this become more valuable?
+</code></pre>
+<hr>
+<h2>13. Checklists</h2>
+<p><strong>Case Study Quality Checklist</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> All six questions answered in full, not summarized in one line</li>
+<li><input disabled="" type="checkbox"> Rights holder archetype correctly identified</li>
+<li><input disabled="" type="checkbox"> Tier and rights bundle correctly classified using Phase 02 terminology</li>
+<li><input disabled="" type="checkbox"> Recommendation (Question 6) is specific and actionable, not generic</li>
+<li><input disabled="" type="checkbox"> Case study is written in a format usable in a future client proposal</li>
+</ul>
+<hr>
+<h2>14. Worksheets</h2>
+<p><strong>Worksheet: Archetype Sort</strong></p>
+<p>Before writing full case studies, take twenty real, current partnership announcements (a subset of your homework research) and simply sort each into one of the four archetypes, noting the one detail in the announcement that confirmed your classification. This is a fast pattern-recognition drill to complete before investing time in full six-question write-ups.</p>
+<hr>
+<h2>15. Homework</h2>
+<ol>
+<li><strong>Complete the Archetype Sort worksheet</strong> for twenty real announcements involving the NBA, NFL, NCAA, the Olympics, MotoGP, or Formula 1 (any mix).</li>
+<li><strong>Write ten full Case Study Write-Ups</strong> (of the fifty total required across all of Phase 03 — the remaining forty are completed in Lesson 3.2&#39;s homework), using the template, covering at least three of the four archetypes.</li>
+<li><strong>Select your single strongest case study</strong> from the ten and prepare a two-minute verbal presentation of it, ending with your Question 6 recommendation.</li>
+</ol>
+<p>Deliverable format: one document containing the Archetype Sort worksheet and all ten Case Study Write-Ups, plus a note identifying which one you&#39;ll present.</p>
+<hr>
+<h2>16. Manager Coaching Notes</h2>
+<p><strong>Purpose of this lesson in the employee&#39;s development:</strong> This lesson tests whether the employee can move from &quot;I know the vocabulary&quot; (Phase 02) to &quot;I can read a real deal and reason about it the way a commercial strategist does.&quot; Your evaluation should focus heavily on the quality of Question 6 recommendations — this is where genuine strategic thinking shows up, or fails to.</p>
+<p><strong>Discussion questions to ask in review:</strong></p>
+<ul>
+<li>&quot;Walk me through your strongest case study — specifically, your recommendation. Why is that the right next move for this partnership?&quot;</li>
+<li>&quot;Give me an example from your Archetype Sort where the archetype changed how you&#39;d think about the deal.&quot; (Tests real application of the Rights Holder Archetype Quadrant, not just classification for its own sake.)</li>
+<li>&quot;Which of the six questions did you find hardest to answer confidently, and why?&quot;</li>
+</ul>
+<p><strong>Expected answers:</strong> A proficient employee&#39;s Question 6 recommendations are specific, plausible, and clearly grounded in the rest of their analysis — not generic ideas that could be pasted onto any case study.</p>
+<p><strong>Coaching tips:</strong></p>
+<ul>
+<li>If an employee&#39;s case studies read as summaries rather than analysis, have them rewrite Question 6 specifically, out loud, before accepting the homework.</li>
+<li>Watch for employees who confuse NCAA association-level and school-level rights — this is a common, correctable error tied directly back to Phase 01&#39;s ecosystem map.</li>
+</ul>
+<p><strong>Common employee mistakes to watch for:</strong></p>
+<ul>
+<li>Generic Question 6 recommendations (&quot;do more marketing&quot;).</li>
+<li>Treating press release language as fully reliable rather than reasoning independently about the underlying business objective.</li>
+<li>Shallow, rushed case studies that don&#39;t reflect genuine six-question analysis.</li>
+</ul>
+<p><strong>Evaluation checklist:</strong> see Grading Rubric (Section 20).</p>
+<hr>
+<h2>18. Practical Exercise</h2>
+<p><strong>Exercise: Cold Case Study</strong></p>
+<p>Manager provides one real, unfamiliar partnership announcement involving the NBA, NFL, NCAA, the Olympics, MotoGP, or Formula 1. Employee has 30 minutes to produce a complete Case Study Write-Up, including archetype classification and a specific Question 6 recommendation.</p>
+<p>Evaluation focus: speed, accuracy of archetype classification, and specificity of the final recommendation.</p>
+<hr>
+<h2>19. Role-Play Exercise</h2>
+<p><strong>Scenario:</strong> You are presenting your strongest case study (from homework) to a VYRO leadership team as a reference point for a new client pitch. Your manager plays a skeptical VP who questions whether the comparison actually applies.</p>
+<p><strong>Manager&#39;s role-play brief:</strong> Ask at least one pointed question challenging whether the case study&#39;s archetype actually matches the prospective new client&#39;s situation (e.g., &quot;this was a single-entity deal — our prospect is a federated conference. Does this comparison even hold up?&quot;).</p>
+<p><strong>What &quot;good&quot; looks like:</strong> The employee doesn&#39;t retreat from the comparison defensively — they either explain specifically why the archetype match holds, or they adjust the recommendation to account for the structural difference, demonstrating real understanding of the Rights Holder Archetype Quadrant rather than just having memorized it.</p>
+<hr>
+<h2>20. Grading Rubric</h2>
+<p>Scored out of 100.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+<th>Exemplary (full points)</th>
+<th>Proficient</th>
+<th>Developing</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research</td>
+<td>10</td>
+<td>Twenty archetype-sorted announcements and ten case studies are all real, current, well-sourced</td>
+<td>Minor sourcing gaps</td>
+<td>Thin or outdated sourcing</td>
+<td>Missing or fabricated</td>
+</tr>
+<tr>
+<td>Business Understanding</td>
+<td>10</td>
+<td>Correctly identifies business objectives beyond generic &quot;brand awareness&quot;</td>
+<td>Mostly correct</td>
+<td>Frequently generic</td>
+<td>Objectives not identified</td>
+</tr>
+<tr>
+<td>Commercial Strategy</td>
+<td>10</td>
+<td>Question 6 recommendations are specific, plausible, and strategically sound across all ten case studies</td>
+<td>Mostly specific</td>
+<td>Some generic recommendations</td>
+<td>Recommendations generic throughout</td>
+</tr>
+<tr>
+<td>Critical Thinking</td>
+<td>10</td>
+<td>Correctly identifies archetype and its implications for every case study</td>
+<td>Mostly correct</td>
+<td>Frequent archetype confusion</td>
+<td>Archetype not meaningfully applied</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>10</td>
+<td>Case studies are clear, well-organized, proposal-ready</td>
+<td>Minor organization issues</td>
+<td>Hard to follow in places</td>
+<td>Disorganized</td>
+</tr>
+<tr>
+<td>Professionalism</td>
+<td>10</td>
+<td>On time, correctly formatted, ready for manager review</td>
+<td>Minor formatting issues</td>
+<td>Notable gaps</td>
+<td>Unprofessional or incomplete</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>10</td>
+<td>Verbal presentation of strongest case study is confident and well-structured</td>
+<td>Mostly structured</td>
+<td>Disorganized delivery</td>
+<td>Unable to present verbally</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>10</td>
+<td>Tier and rights classification (Phase 02 vocabulary) correct throughout</td>
+<td>1–2 errors</td>
+<td>3–4 errors</td>
+<td>5+ errors</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>10</td>
+<td>Cold Case Study practical exercise completed accurately under time pressure</td>
+<td>Mostly accurate</td>
+<td>Several errors under pressure</td>
+<td>Unable to complete under time pressure</td>
+</tr>
+<tr>
+<td>Overall Quality</td>
+<td>10</td>
+<td>Publish-ready for LMS with no manager edits</td>
+<td>Minor edits needed</td>
+<td>Substantial rework needed</td>
+<td>Does not meet bar</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum passing score for this lesson: 75/100.</strong></p>
+<hr>
+<h2>21. Reflection Questions</h2>
+<ol>
+<li>Which rights holder archetype do you expect most of VYRO&#39;s actual clients to fall into, and why does that matter for how you&#39;ll approach your day-to-day work?</li>
+<li>Which of your ten case studies had the hardest-to-identify business objective, and what did you do to reason through it?</li>
+<li>Look at your Question 6 recommendations — which one do you think a real rights holder would actually be most likely to act on, and why?</li>
+<li>How does understanding the NCAA&#39;s federated structure change how you&#39;d approach a university client, compared to how you&#39;d approach a single professional team?</li>
+</ol>
+<hr>
+<h2>22. Recommended Reading</h2>
+<ul>
+<li>Recent partnership announcements involving any NBA or NFL team or league office, read specifically to classify archetype and infer business objective</li>
+<li>Publicly available overviews of NCAA governance structure (association, conference, and institutional levels), to reinforce the federated archetype</li>
+<li>Publicly available overviews of the IOC&#39;s top-tier global sponsorship program structure, to reinforce the global multi-sport exclusivity archetype</li>
+<li>Recent Formula 1 or MotoGP team and series-level partnership announcements, read specifically to distinguish team-layer from series-layer rights</li>
+</ul>
+<hr>
+<h2>23. Key Takeaways</h2>
+<ul>
+<li>The Six-Question Case Study Framework is the standard analytical tool for the rest of this academy — memorize it, don&#39;t just recognize it.</li>
+<li>Rights holders fall into four structural archetypes (single-entity, federated, globally governed multi-sport, dual-layer series/team), and each changes how a partnership should realistically be structured and pitched.</li>
+<li>League/association-level rights are not the same as team/school-level rights — this distinction alone prevents one of the most common structural errors in this industry.</li>
+<li>A case study without a specific, actionable recommendation (Question 6) is a summary, not analysis.</li>
+<li>Real case studies, genuinely analyzed, become reusable reference points in future client pitches — this is the actual point of Phase 03.</li>
+</ul>
+<hr>
+<p><strong>Next in Phase 03:</strong> Lesson 3.2 — Analyzing Commercial Rights Companies: VYRO&#39;s Peer Set (draft pending your review of this lesson).</p>
+</article>
+    <section class="quiz" aria-label="Knowledge Check">
+    <div class="quiz-head">
+      <span class="quiz-eyebrow">Knowledge Check</span>
+      <h2 class="quiz-title">Test What You Just Learned</h2>
+    </div>
+    <div class="quiz-questions"><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q1</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">Which archetype best describes the NCAA?</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Single-entity</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Federated / multi-institution</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Globally governed, multi-sport</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Dual-layer series/team</span></button></div>
+        </div><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q2</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">Which archetype is most associated with the strictest, broadest category exclusivity in the industry?</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Single-entity</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="false"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Federated / multi-institution</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="true"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Globally governed, multi-sport</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Dual-layer series/team</span></button></div>
+        </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q3</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Explain why a league-level partnership does not automatically include an individual team's or school's commercial rights.</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that commercial rights authority can be split across multiple levels of a rights holder structure (league/association vs. team/school), each of which may control and separately sell its own inventory.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q4</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">What distinguishes Question 6 ("how could this become more valuable") from simply summarizing a deal?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that a summary describes what happened, while Question 6 requires a specific, actionable recommendation for improving the partnership's value — the analytical, forward-looking component of the framework.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q5</span><span class="quiz-q-type">Applied</span></div>
+        <p class="quiz-q-text">You're analyzing a Formula 1 team's title sponsorship. What's the first structural question you should ask before assuming anything about exclusivity scope?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>whether the exclusivity applies at the team level only, or could conflict/interact with a series-level (F1 global) partnership in the same category — i.e., confirming which layer of the dual-layer structure the deal operates at.</div>
+      </div></div>
+    <div class="quiz-footer">
+      <div class="quiz-score">Multiple choice score: <span class="quiz-score-val">0</span> / 2</div>
+      <div class="quiz-passing"><strong>Passing score:</strong> 4 of 5 correct, with Questions 3 and 4 answered with full reasoning.</div>
+    </div>
+  </section>
+    <div class="pagenav">
+      <a class="pagenav-link prev" href="p02-cert.html"><span class="pagenav-dir">← Previous</span><span class="pagenav-title">Certification</span></a>
+      <a class="pagenav-link next" href="p03-l2.html"><span class="pagenav-dir">Next →</span><span class="pagenav-title">Lesson 3.2</span></a>
+    </div>
+  </main>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Course Contents</span>
+        <button class="menu-toggle menu-toggle-close" id="menuCloseBtn" aria-label="Close navigation">✕</button>
+      </div>
+      <div class="nav-scroll"><a class="nav-item nav-home" href="index.html">Overview</a><details class="nav-group">
+        <summary><span class="nav-phase-num">01</span><span class="nav-phase-title">How Commercial Partnerships Actually Work</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p01-l1.html">Lesson 1.1</a><a class="nav-item" href="p01-l2.html">Lesson 1.2</a><a class="nav-item" href="p01-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">02</span><span class="nav-phase-title">The Language of Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p02-l1.html">Lesson 2.1</a><a class="nav-item" href="p02-l2.html">Lesson 2.2</a><a class="nav-item" href="p02-cert.html">Certification</a></div>
+      </details><details class="nav-group" open>
+        <summary><span class="nav-phase-num">03</span><span class="nav-phase-title">Study Real Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item active" href="p03-l1.html">Lesson 3.1</a><a class="nav-item" href="p03-l2.html">Lesson 3.2</a><a class="nav-item" href="p03-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">04</span><span class="nav-phase-title">Professional Sales</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p04-l1.html">Lesson 4.1</a><a class="nav-item" href="p04-l2.html">Lesson 4.2</a><a class="nav-item" href="p04-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">05</span><span class="nav-phase-title">Marketing</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p05-l1.html">Lesson 5.1</a><a class="nav-item" href="p05-l2.html">Lesson 5.2</a><a class="nav-item" href="p05-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">06</span><span class="nav-phase-title">Commercial Assets</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p06-l1.html">Lesson 6.1</a><a class="nav-item" href="p06-l2.html">Lesson 6.2</a><a class="nav-item" href="p06-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">07</span><span class="nav-phase-title">Sponsorship Valuation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p07-l1.html">Lesson 7.1</a><a class="nav-item" href="p07-l2.html">Lesson 7.2</a><a class="nav-item" href="p07-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">08</span><span class="nav-phase-title">Sponsorship Packages</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p08-l1.html">Lesson 8.1</a><a class="nav-item" href="p08-l2.html">Lesson 8.2</a><a class="nav-item" href="p08-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">09</span><span class="nav-phase-title">Partnership Activation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p09-l1.html">Lesson 9.1</a><a class="nav-item" href="p09-l2.html">Lesson 9.2</a><a class="nav-item" href="p09-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">10</span><span class="nav-phase-title">Client Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p10-l1.html">Lesson 10.1</a><a class="nav-item" href="p10-l2.html">Lesson 10.2</a><a class="nav-item" href="p10-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">11</span><span class="nav-phase-title">Commercial Rights Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p11-l1.html">Lesson 11.1</a><a class="nav-item" href="p11-l2.html">Lesson 11.2</a><a class="nav-item" href="p11-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">12</span><span class="nav-phase-title">Business Development</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p12-l1.html">Lesson 12.1</a><a class="nav-item" href="p12-l2.html">Lesson 12.2</a><a class="nav-item" href="p12-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">13</span><span class="nav-phase-title">Finance</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p13-l1.html">Lesson 13.1</a><a class="nav-item" href="p13-l2.html">Lesson 13.2</a><a class="nav-item" href="p13-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">14</span><span class="nav-phase-title">Building VYRO</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p14-l1.html">Lesson 14.1</a><a class="nav-item" href="p14-l2.html">Lesson 14.2</a><a class="nav-item" href="p14-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">15</span><span class="nav-phase-title">Executive Leadership</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p15-l1.html">Lesson 15.1</a><a class="nav-item" href="p15-l2.html">Lesson 15.2</a><a class="nav-item" href="p15-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">16</span><span class="nav-phase-title">Capstone Project</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p16-brief.html">Brief + Stage 16.1</a><a class="nav-item" href="p16-stage-2.html">Stage 16.2</a><a class="nav-item" href="p16-stage-3.html">Stage 16.3</a><a class="nav-item" href="p16-stage-4.html">Stage 16.4</a><a class="nav-item" href="p16-stage-5.html">Stage 16.5</a><a class="nav-item" href="p16-certification.html">Graduation</a></div>
+      </details></div>
+    </div>
+  </nav>
+</div>
+</div>
+<script>
+var menuBtn = document.getElementById('menuToggle');
+var closeBtn = document.getElementById('menuCloseBtn');
+function openMenu(){ document.getElementById('sidebar').classList.add('open'); document.body.classList.add('menu-open'); }
+function closeMenu(){ document.getElementById('sidebar').classList.remove('open'); document.body.classList.remove('menu-open'); }
+menuBtn.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+document.querySelectorAll('.sidebar .nav-item').forEach(function(a){
+  a.addEventListener('click', closeMenu);
+});
+document.querySelectorAll('.doc pre, .doc table').forEach(function(el){
+  var wrap = el.tagName === 'TABLE' ? el : el;
+  function check(){
+    if (wrap.scrollWidth > wrap.clientWidth + 2) wrap.classList.add('has-overflow');
+    else wrap.classList.remove('has-overflow');
+  }
+  check();
+  window.addEventListener('resize', check);
+  wrap.addEventListener('scroll', function(){
+    var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+    wrap.classList.toggle('scrolled-end', atEnd);
+  });
+});
+document.querySelectorAll('.quiz-q-mc').forEach(function(q){
+  var quizEl = q.closest('.quiz');
+  var scoreEl = quizEl ? quizEl.querySelector('.quiz-score-val') : null;
+  q.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (q.classList.contains('answered')) return;
+      q.classList.add('answered');
+      var correct = btn.getAttribute('data-correct') === 'true';
+      btn.classList.add(correct ? 'correct' : 'incorrect');
+      if (!correct) {
+        var correctBtn = q.querySelector('[data-correct="true"]');
+        if (correctBtn) correctBtn.classList.add('reveal-correct');
+      } else if (scoreEl) {
+        scoreEl.textContent = String(Number(scoreEl.textContent) + 1);
+      }
+      q.querySelectorAll('.quiz-option').forEach(function(b){ b.disabled = true; });
+    });
+  });
+});
+document.querySelectorAll('.quiz-reveal-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var box = btn.nextElementSibling;
+    var hidden = box.hasAttribute('hidden');
+    if (hidden) { box.removeAttribute('hidden'); btn.textContent = 'Hide Expected Answer'; }
+    else { box.setAttribute('hidden',''); btn.textContent = 'Show Expected Answer'; }
+  });
+});
+</script>
+</body>
+</html>

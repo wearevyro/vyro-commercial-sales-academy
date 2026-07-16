@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson 14.1 — Foundational Identity &amp; Structure · VYRO Commercial Sales Academy</title>
+<meta name="description" content="VYRO Commercial Sales Academy — internal certification program for commercial partnerships professionals.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%231B2A56%22/><text x=%2250%25%22 y=%2261%25%22 font-size=%2258%22 fill=%22%23FFFFFF%22 text-anchor=%22middle%22 font-family=%22Arial,sans-serif%22 font-weight=%22900%22>V</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F2F4F8; --gold-deep:#E7EAF1;
+  --cream:#FFFFFF; --cream-2:#EEF1F6; --cream-3:#E3E7EF;
+  --ink:#16213D; --ink-mute:rgba(22,33,61,0.64); --ink-faint:rgba(22,33,61,0.42);
+  --line:rgba(22,33,61,0.12); --line-strong:rgba(22,33,61,0.22);
+  --accent:#1B2A56; --accent-deep:#12203F; --accent-soft:rgba(27,42,86,0.08);
+  --success:#1E7A4C; --success-soft:rgba(30,122,76,0.1);
+  --danger:#B3392C; --danger-soft:rgba(179,57,44,0.1);
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Anton', 'Archivo Black', sans-serif;
+  --font-badge: 'Baloo 2', 'Inter', sans-serif;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:var(--gold);color:var(--ink);font-family:var(--font);}
+body{-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle at 8px 8px, rgba(255,255,255,0.35) 2px, transparent 2px);background-size:26px 26px;}
+a{color:inherit;text-decoration:none;}
+.frame{padding:14px;min-height:100vh;}
+.shell{display:flex;flex-direction:column;min-height:calc(100vh - 28px);background:var(--cream);border-radius:22px;overflow:hidden;box-shadow:0 18px 40px rgba(33,20,6,0.28);position:relative;}
+
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 40px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:40px;height:40px;border-radius:12px;background:var(--accent);color:var(--cream);font-family:var(--font-badge);font-weight:800;font-size:21px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 3px 0 var(--accent-deep);transform:rotate(-4deg);}
+.brand-text{font-family:var(--font-badge);font-size:15px;font-weight:800;letter-spacing:1.5px;line-height:1.5;color:var(--ink);}
+.brand-text small{font-size:10px;font-weight:600;letter-spacing:0.5px;color:var(--ink-mute);text-transform:none;font-family:var(--font);}
+
+.menu-toggle{display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);border:none;padding:13px 22px;border-radius:30px;font-family:var(--font-badge);font-weight:700;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;box-shadow:0 3px 0 rgba(0,0,0,0.35);cursor:pointer;transition:transform .12s;flex:none;}
+.menu-toggle:hover{transform:translateY(-1px);}
+.menu-toggle-icon{font-size:15px;line-height:1;}
+.menu-toggle-close{padding:0;width:42px;height:42px;justify-content:center;border-radius:12px;background:var(--cream-2);color:var(--ink);box-shadow:0 2px 0 var(--line-strong);}
+
+.sidebar{
+  width:100%;position:fixed;inset:0;z-index:60;background:var(--cream-3);
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;
+  transition:opacity .18s ease, visibility .18s ease;
+}
+.sidebar.open{opacity:1;visibility:visible;}
+body.menu-open{overflow:hidden;}
+.sidebar-inner{display:flex;flex-direction:column;height:100%;max-width:640px;margin:0 auto;width:100%;}
+.sidebar-head{display:flex;align-items:center;justify-content:space-between;padding:24px 28px;border-bottom:3px dashed var(--line-strong);flex:none;}
+.sidebar-title{font-family:var(--font-display);font-weight:400;font-size:20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.nav-scroll{overflow-y:auto;flex:1;padding:20px 28px 40px;}
+.nav-item{display:block;padding:9px 14px;border-radius:9px;font-size:13.5px;color:var(--ink-mute);font-weight:500;}
+.nav-item:hover{background:rgba(33,20,6,0.05);color:var(--ink);}
+.nav-item.active{background:var(--accent);color:#fff;font-weight:700;transform:rotate(-1deg);box-shadow:0 2px 0 var(--accent-deep);}
+.nav-home{margin-bottom:14px;font-weight:800;color:var(--ink);font-family:var(--font-badge);letter-spacing:0.3px;font-size:14.5px;padding:11px 14px;background:var(--cream-2);border-radius:10px;}
+.nav-home.active{background:var(--accent);}
+.nav-group{margin-bottom:10px;background:var(--cream-2);border-radius:14px;overflow:hidden;border:1px solid var(--line);}
+.nav-group[open]{border-color:var(--accent);box-shadow:0 3px 0 rgba(228,35,31,0.18);}
+.nav-group summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:12px 14px;font-size:13px;color:var(--ink-mute);user-select:none;}
+.nav-group summary::-webkit-details-marker{display:none;}
+.nav-group summary::after{content:"+";margin-left:auto;font-family:var(--font-display);font-size:16px;color:var(--ink-faint);}
+.nav-group[open] summary::after{content:"–";color:var(--accent);}
+.nav-group summary:hover{color:var(--ink);}
+.nav-group[open] summary{color:var(--ink);font-weight:700;}
+.nav-phase-num{font-family:var(--font-display);color:var(--accent);font-weight:400;font-size:19px;width:26px;flex:none;}
+.nav-phase-title{flex:1;line-height:1.3;font-family:var(--font-badge);font-weight:600;}
+.nav-items{padding:2px 14px 10px 48px;border-top:1px dashed var(--line-strong);margin-top:2px;padding-top:10px;}
+.nav-items .nav-item{font-size:12.5px;padding:7px 10px;}
+.content{flex:1;min-width:0;padding:56px 60px 100px;max-width:900px;margin:0 auto;width:100%;}
+.eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11.5px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:16px;transform:rotate(-1.5deg);}
+.doc h1{font-family:var(--font-display);font-weight:400;letter-spacing:0.3px;font-size:38px;line-height:1.1;margin:0 0 22px;color:var(--ink);text-transform:uppercase;}
+.doc h2{font-family:var(--font-display);font-weight:400;font-size:23px;letter-spacing:0.2px;margin:44px 0 16px;padding-top:10px;border-top:2px dashed var(--line-strong);color:var(--ink);}
+.doc h2:first-of-type{border-top:none;padding-top:0;}
+.doc h3{font-size:17px;font-weight:700;margin:30px 0 10px;color:var(--ink);}
+.doc h4{font-size:13px;margin:22px 0 8px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1px;font-weight:700;}
+.doc p{font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);margin:0 0 16px;}
+.doc strong{color:var(--ink);font-weight:700;}
+.doc em{color:rgba(33,20,6,0.75);}
+.doc ul,.doc ol{margin:0 0 16px;padding-left:22px;font-size:15.5px;line-height:1.7;color:rgba(33,20,6,0.82);}
+.doc li{margin-bottom:6px;}
+.doc li p{margin-bottom:4px;}
+.doc hr{border:none;border-top:2px dashed var(--line-strong);margin:36px 0;}
+.doc code{font-family:'SF Mono',Consolas,monospace;font-size:13px;background:var(--cream-2);padding:2px 6px;border-radius:4px;color:var(--accent-deep);}
+.doc pre{background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch;transition:mask-image .15s;}
+.doc pre code{background:none;padding:0;color:#E7EAF2;font-size:13px;line-height:1.6;}
+.doc pre.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 34px), transparent 100%);}
+.doc table{width:100%;border-collapse:collapse;margin:0 0 22px;font-size:13.5px;display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--cream-2);border-radius:10px;}
+.doc table.has-overflow:not(.scrolled-end){mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);-webkit-mask-image:linear-gradient(to right, black calc(100% - 28px), transparent 100%);}
+.doc th{text-align:left;color:var(--accent-deep);font-size:11px;letter-spacing:0.5px;text-transform:uppercase;font-weight:700;padding:10px 14px;border-bottom:2px solid var(--line-strong);white-space:nowrap;}
+.doc td{padding:11px 14px;border-bottom:1px solid var(--line);color:rgba(33,20,6,0.78);vertical-align:top;}
+.doc tr:hover td{background:rgba(228,35,31,0.04);}
+.doc blockquote{margin:0 0 20px;padding:4px 20px;border-left:3px solid var(--accent);color:var(--ink-mute);font-style:italic;}
+.doc a{color:var(--accent-deep);text-decoration:underline;text-decoration-color:rgba(228,35,31,0.4);}
+.pagenav{display:flex;justify-content:space-between;gap:20px;margin-top:60px;padding-top:28px;border-top:2px dashed var(--line-strong);}
+.pagenav-link{flex:1;padding:16px 18px;border:1px solid var(--line);border-radius:14px;transition:border-color .15s,transform .15s;background:var(--cream-2);}
+.pagenav-link:hover{border-color:var(--accent);transform:translateY(-2px);}
+.pagenav-link.next{text-align:right;}
+.pagenav-dir{display:block;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;font-weight:700;}
+.pagenav-title{display:block;font-size:14px;font-weight:700;color:var(--ink);}
+
+/* Quiz */
+.quiz{margin-top:56px;padding:36px 36px 32px;background:var(--cream-2);border:1px solid var(--line);border-radius:20px;}
+.quiz-head{margin-bottom:26px;}
+.quiz-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:var(--accent-soft);padding:5px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:12px;}
+.quiz-title{font-family:var(--font-display);font-weight:400;font-size:24px;letter-spacing:0.2px;margin:0;color:var(--ink);}
+.quiz-questions{display:flex;flex-direction:column;gap:22px;}
+.quiz-q{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:20px 22px;}
+.quiz-q-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.quiz-q-num{font-family:var(--font-display);font-weight:400;font-size:15px;color:var(--accent);}
+.quiz-q-type{font-family:var(--font-badge);font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-faint);background:var(--cream-2);padding:3px 10px;border-radius:20px;}
+.quiz-q-text{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 16px;font-weight:600;}
+.quiz-options{display:flex;flex-direction:column;gap:8px;}
+.quiz-option{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:10px;background:var(--cream);font-family:var(--font);font-size:14px;line-height:1.5;color:var(--ink-mute);cursor:pointer;transition:border-color .15s,background .15s;}
+.quiz-option:hover:not(:disabled){border-color:var(--accent);background:var(--accent-soft);}
+.quiz-option:disabled{cursor:default;}
+.quiz-option-letter{font-family:var(--font-badge);font-weight:700;color:var(--ink-faint);flex:none;}
+.quiz-option-text{flex:1;}
+.quiz-option.correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.correct .quiz-option-letter{color:var(--success);}
+.quiz-option.incorrect{border-color:var(--danger);background:var(--danger-soft);color:var(--ink);}
+.quiz-option.incorrect .quiz-option-letter{color:var(--danger);}
+.quiz-option.reveal-correct{border-color:var(--success);background:var(--success-soft);color:var(--ink);}
+.quiz-option.reveal-correct .quiz-option-letter{color:var(--success);}
+.quiz-textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-family:var(--font);font-size:14px;line-height:1.6;color:var(--ink);background:var(--cream);resize:vertical;margin-bottom:10px;}
+.quiz-textarea:focus{outline:none;border-color:var(--accent);}
+.quiz-reveal-btn{font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:0.5px;color:var(--accent);background:var(--accent-soft);border:none;padding:9px 16px;border-radius:20px;cursor:pointer;}
+.quiz-reveal-btn:hover{background:var(--accent);color:#fff;}
+.quiz-expected{margin-top:12px;padding:14px 16px;background:var(--accent-soft);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;font-size:13.5px;line-height:1.6;color:var(--ink-mute);}
+.quiz-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed var(--line-strong);}
+.quiz-score{font-family:var(--font-badge);font-size:13px;font-weight:700;color:var(--ink);}
+.quiz-score-val{color:var(--accent);}
+.quiz-passing{font-size:12.5px;color:var(--ink-mute);}
+
+/* Home page */
+.hero{padding:8px 0 40px;position:relative;}
+.hero-eyebrow{display:inline-block;font-family:var(--font-badge);font-size:12px;font-weight:700;letter-spacing:2px;color:var(--accent);background:var(--accent-soft);padding:6px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:20px;transform:rotate(-1.5deg);}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:56px;line-height:1;margin:0 0 20px;text-transform:uppercase;letter-spacing:0.5px;color:var(--ink);}
+.hero p.lead{font-size:17px;line-height:1.6;color:var(--ink-mute);max-width:640px;margin:0 0 32px;}
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;}
+.stat{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:16px 22px;min-width:110px;}
+.stat .num{font-family:var(--font-display);font-weight:400;font-size:32px;color:var(--accent);line-height:1;}
+.stat .label{font-size:11px;color:var(--ink-mute);margin-top:6px;letter-spacing:0.5px;font-weight:700;text-transform:uppercase;}
+.phase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:20px;}
+.phase-card{border:1px solid var(--line);border-radius:16px;padding:20px 22px;background:var(--cream-2);transition:border-color .15s,transform .15s,box-shadow .15s;}
+.phase-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 0 rgba(33,20,6,0.06);}
+.phase-card .pn{display:inline-block;font-family:var(--font-badge);color:#fff;background:var(--accent);font-size:11.5px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:20px;margin-bottom:10px;transform:rotate(-2deg);}
+.phase-card .pt{font-size:16px;font-weight:700;margin-bottom:8px;line-height:1.3;color:var(--ink);}
+.phase-card .pd{font-size:12.5px;color:var(--ink-mute);line-height:1.5;}
+
+@media (max-width: 900px){
+  .frame{padding:0;}
+  .shell{border-radius:0;min-height:100vh;box-shadow:none;}
+  .topbar{padding:16px 20px;}
+  .brand-text{font-size:12px;}
+  .menu-toggle{padding:11px 16px;font-size:11px;}
+  .sidebar-head{padding:18px 20px;}
+  .nav-scroll{padding:16px 20px 40px;}
+  .content{padding:36px 20px 70px;}
+  .doc h1{font-size:27px;}
+  .doc h2{font-size:20px;}
+  .nav-item{padding:14px 16px;font-size:16px;}
+  .nav-items{padding:2px 12px 12px 20px;}
+  .nav-items .nav-item{padding:12px 10px;font-size:14.5px;}
+  .nav-group summary{padding:15px 16px;font-size:15px;}
+  .nav-home{margin-bottom:10px;}
+  .pagenav{flex-direction:column;}
+  .stat-row{gap:10px;}
+  .stat{padding:12px 16px;min-width:90px;}
+  .hero h1{font-size:36px;}
+  .phase-grid{grid-template-columns:1fr;}
+  .quiz{padding:26px 20px 24px;}
+  .quiz-q{padding:16px 16px;}
+  .quiz-footer{flex-direction:column;align-items:flex-start;}
+}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">V</span>
+      <span class="brand-text">VYRO<br><small>Commercial Sales Academy</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">MENU <span class="menu-toggle-icon">☰</span></button>
+  </header>
+  <main class="content">
+    <div class="eyebrow">Phase 14 · Building VYRO</div>
+    <article class="doc"><h1>Lesson 14.1 — Foundational Identity &amp; Structure</h1>
+<hr>
+<h2>1. Lesson Overview</h2>
+<p>Design your commercial partnerships company. This phase asks you to step back from any single client, deal, or function and design VYRO itself — the company whose principles and practices you&#39;ve been learning and applying since Phase 01. This is the most comprehensive synthesis exercise in the academy: everything taught since Lesson 1.1 should be visible, in some form, in the company you design here.</p>
+<p>This lesson covers foundational identity: mission, vision, core values, organizational structure, and service offerings — the &quot;who VYRO is and what it does&quot; layer. Lesson 14.2 covers the operating systems layer — pricing strategy, CRM process, sales process, proposal templates, website structure, operations manual, and brand guidelines — culminating in Phase 14&#39;s core homework deliverable: the complete VYRO business blueprint.</p>
+<hr>
+<h2>2. Learning Objectives</h2>
+<p>By the end of this lesson, you will be able to:</p>
+<ol>
+<li>Write a clear mission statement and distinguish it from a vision statement.</li>
+<li>Articulate core values that trace directly and specifically to practices taught throughout this academy, not generic corporate language.</li>
+<li>Design an organizational structure appropriate to a growing commercial rights company, connecting to Phase 11&#39;s Commercial Team Structure.</li>
+<li>Build a complete service offerings catalog reflecting VYRO&#39;s actual scope of work, as introduced in this academy&#39;s foundational project brief.</li>
+<li>Produce a coherent foundational identity document as the first half of the full VYRO business blueprint.</li>
+</ol>
+<hr>
+<h2>3. Business Context</h2>
+<p>Every real company operates on some foundational identity, whether it&#39;s been deliberately designed or has simply accumulated informally over time. A deliberately designed identity — a clear mission, a real vision, values that actually shape behavior, a structure suited to the work, and a clearly scoped service offering — produces a more coherent, more scalable company than one built accidentally. This lesson asks you to do that design work explicitly, using everything you&#39;ve learned about what VYRO actually does and how it operates.</p>
+<hr>
+<h2>4. Why This Matters</h2>
+<ul>
+<li><strong>A mission and vision that are vague or interchangeable provide no real guidance</strong> — they should be specific enough to actually shape decisions.</li>
+<li><strong>Values that don&#39;t trace to real practices are just wall art</strong> — this academy has taught many specific, real practices (honest weak-fit assessments, &quot;earned not extracted&quot; compensation, relationship over transaction) that should show up directly in any values statement claiming to represent VYRO.</li>
+<li><strong>Organizational structure has real operational consequences</strong> — Phase 11 already showed how disconnected functions (business development, account management, activation) create coordination failures; structure should be designed to prevent that, not left to chance.</li>
+<li><strong>A clearly scoped service catalog is what allows VYRO to explain, consistently and credibly, exactly what it does</strong> — vague service descriptions produce vague client expectations.</li>
+</ul>
+<hr>
+<h2>5. Core Lesson</h2>
+<h3>5.1 Mission</h3>
+<p>A mission statement describes what the company does, today, in clear, specific terms — not aspirational language, but a concrete statement of current purpose. For VYRO, per this academy&#39;s foundational brief, a mission statement should capture the core idea introduced in Phase 01: VYRO becomes the outsourced commercial department for organizations that own valuable audiences, brands, venues, or IP, helping them maximize commercial revenue. A strong mission statement is specific enough that someone reading it would understand what VYRO does without needing further explanation.</p>
+<h3>5.2 Vision</h3>
+<p>A vision statement describes where the company is headed — the long-term, aspirational future state the mission&#39;s ongoing work is building toward. Where the mission is present-tense and concrete, the vision is future-oriented and aspirational, but should still be genuinely connected to VYRO&#39;s actual trajectory (Phase 11&#39;s growth planning, Phase 12&#39;s acquisition strategy) rather than disconnected, generic ambition.</p>
+<h3>5.3 Core Values</h3>
+<p>Core values are the operating principles that actually shape behavior and decisions — and for VYRO, they should trace directly to specific practices taught throughout this academy, not generic corporate language (&quot;integrity,&quot; &quot;excellence&quot;) that could apply to any company. Examples of values genuinely earned through this academy&#39;s content: a commitment to being &quot;earned, not extracted&quot; in compensation (Phase 01), prioritizing long-term relationships over one-time transactions (Phase 01, Phase 10), honest assessment even when it means saying a fit is weak (Phase 05), and treating fan/client data with real compliance discipline (Phase 06). A strong values statement for VYRO should be traceable, value by value, to real practices already established in this academy.</p>
+<h3>5.4 Organizational Structure</h3>
+<p>Organizational structure should reflect the functional reality established in Phase 11: business development, account management, and activation as distinct but coordinated functions, unified by shared reference tools like the Portfolio Rights Management Matrix. As a company grows, structure typically evolves from a small team where individuals wear multiple functional hats, toward more specialized roles as volume increases — but the underlying functional logic (prospecting/closing, ongoing relationship stewardship, execution and measurement) should remain consistent regardless of company size.</p>
+<h3>5.5 Service Offerings</h3>
+<p>A service offerings catalog formalizes VYRO&#39;s actual scope of work into a clear, specific menu — drawing directly on this academy&#39;s foundational brief: commercial strategy, commercial rights audits, asset inventory development, sponsorship sales, corporate partnerships, naming rights sales, premium seating and hospitality sales, media and digital rights strategy, licensing strategy, revenue forecasting, pricing strategy, business development, prospecting, commercial valuation, partnership activation, relationship management, sponsor reporting, renewal strategy, and commercial growth planning. A well-organized service catalog groups these into clear categories rather than presenting an undifferentiated list, and connects each service to the specific academy phase where it was taught.</p>
+<hr>
+<h2>6. Commercial Frameworks</h2>
+<h3>Framework: Mission vs. Vision</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Mission</th>
+<th>Vision</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Time orientation</td>
+<td>Present</td>
+<td>Future</td>
+</tr>
+<tr>
+<td>Tone</td>
+<td>Concrete, specific</td>
+<td>Aspirational, but grounded</td>
+</tr>
+<tr>
+<td>Answers</td>
+<td>&quot;What do we do?&quot;</td>
+<td>&quot;Where are we headed?&quot;</td>
+</tr>
+</tbody></table>
+<h3>Framework: Values-to-Practice Traceability</h3>
+<pre><code>STATED VALUE  →  SPECIFIC PRACTICE FROM THIS ACADEMY (with phase reference)
+</code></pre>
+<p>Every value in VYRO&#39;s core values statement should be able to complete this sentence with a real, specific reference — a value that can&#39;t be traced this way should be reconsidered or made more specific.</p>
+<h3>Framework: Organizational Structure Scaling Model</h3>
+<pre><code>SMALL TEAM        → individuals cover multiple functions (BD + account management + activation)
+GROWING TEAM       → functions begin separating into dedicated roles
+MATURE TEAM         → fully specialized functions, coordinated through shared systems (Phase 11&#39;s Portfolio Matrix)
+</code></pre>
+<p>The underlying functional logic (prospect/close, manage, activate) stays constant; only the degree of specialization changes with scale.</p>
+<hr>
+<h2>7. Step-by-Step Process</h2>
+<p><strong>How to build VYRO&#39;s foundational identity document:</strong></p>
+<ol>
+<li>Write a concrete, specific mission statement capturing VYRO&#39;s core purpose (Phase 01&#39;s outsourced commercial department concept).</li>
+<li>Write an aspirational but grounded vision statement, connected to real growth planning (Phase 11, Phase 12).</li>
+<li>Draft core values, testing each one against the Values-to-Practice Traceability framework — revise any value that can&#39;t be traced to a specific academy practice.</li>
+<li>Design an organizational structure using the Scaling Model, reflecting Phase 11&#39;s functional logic.</li>
+<li>Build a complete, categorized service offerings catalog, connecting each service to its source phase in this academy.</li>
+</ol>
+<hr>
+<h2>8. Real Industry Examples</h2>
+<p><strong>A services company whose stated values map directly and specifically to real client-facing practices</strong> (e.g., a transparency value showing up concretely in how pricing is communicated) rather than generic aspirational language — illustrates the Values-to-Practice Traceability principle in a real business context.</p>
+<p><strong>A growing agency&#39;s organizational chart showing functional specialization increasing over time as the company scaled</strong>, while maintaining the same underlying functional logic from its earliest, smallest team structure — illustrates the Organizational Structure Scaling Model.</p>
+<p><strong>A commercial rights company&#39;s public service offerings page, organized into clear categories (strategy, sales, activation, management)</strong> rather than a single undifferentiated list — illustrates strong service catalog organization.</p>
+<hr>
+<h2>9. VYRO Best Practices</h2>
+<ul>
+<li><strong>Write mission statements that are specific enough to actually differentiate VYRO</strong>, not generic enough to apply to any company in the industry.</li>
+<li><strong>Test every stated value against the Traceability framework</strong> — a value with no real, specific practice behind it should be cut or revised.</li>
+<li><strong>Design organizational structure around the functional logic established in Phase 11</strong>, regardless of current company size.</li>
+<li><strong>Organize the service catalog into clear categories</strong>, connecting services back to where they were taught in this academy, reinforcing the coherence of VYRO&#39;s full offering.</li>
+<li><strong>Keep the foundational identity document itself concise</strong> — a mission, vision, and values statement that takes pages to read has likely lost the clarity it&#39;s meant to provide.</li>
+</ul>
+<hr>
+<h2>10. Common Mistakes</h2>
+<ul>
+<li><strong>Writing a mission and vision that are functionally interchangeable</strong>, failing to distinguish present purpose from future aspiration.</li>
+<li><strong>Listing generic corporate values</strong> with no real connection to specific VYRO practices.</li>
+<li><strong>Designing an organizational structure with no clear functional logic</strong>, or one disconnected from Phase 11&#39;s established framework.</li>
+<li><strong>Presenting the service catalog as an undifferentiated list</strong> rather than organized, categorized offerings.</li>
+<li><strong>Making the identity document too long or abstract to actually guide real decisions.</strong></li>
+</ul>
+<hr>
+<h2>11. Professional Tips</h2>
+<ul>
+<li>Draft your mission and vision statements, then read them back and ask: &quot;could this apply to any company in this industry, or is it specifically VYRO?&quot; — specificity is the test of a strong statement.</li>
+<li>For every core value, write the specific academy practice it traces to before finalizing the value&#39;s wording — this discipline alone will filter out generic, untraceable values.</li>
+<li>When designing the organizational structure, sketch it at all three scaling stages (small/growing/mature) even if only the current stage is immediately relevant — this builds a more complete picture of how the structure should evolve.</li>
+</ul>
+<hr>
+<h2>12. Templates</h2>
+<h3>Template: Foundational Identity Document</h3>
+<pre><code>MISSION STATEMENT:
+
+VISION STATEMENT:
+
+CORE VALUES (each traced to a specific academy practice):
+1. Value: __________ | Traces to: __________ (Phase __)
+2. Value: __________ | Traces to: __________ (Phase __)
+3. Value: __________ | Traces to: __________ (Phase __)
+[continue as needed]
+
+ORGANIZATIONAL STRUCTURE:
+  Current stage: [ ] Small [ ] Growing [ ] Mature
+  Structure diagram/description:
+
+SERVICE OFFERINGS CATALOG:
+  Category 1: __________
+    Services: 
+  Category 2: __________
+    Services: 
+  [continue as needed]
+</code></pre>
+<hr>
+<h2>13. Checklists</h2>
+<p><strong>Foundational Identity Document Completion Checklist</strong></p>
+<ul>
+<li><input disabled="" type="checkbox"> Mission statement is specific and present-tense, distinct from the vision</li>
+<li><input disabled="" type="checkbox"> Vision statement is aspirational but genuinely connected to real growth planning</li>
+<li><input disabled="" type="checkbox"> Every core value traces to a specific, named academy practice</li>
+<li><input disabled="" type="checkbox"> Organizational structure reflects Phase 11&#39;s functional logic</li>
+<li><input disabled="" type="checkbox"> Service catalog is organized into clear categories, not an undifferentiated list</li>
+</ul>
+<hr>
+<h2>14. Worksheets</h2>
+<p><strong>Worksheet: Values Traceability Audit</strong></p>
+<p>Draft five candidate core values for VYRO. For each, write the specific academy practice and phase it traces to. If you cannot complete this for any candidate value, revise or replace it before finalizing.</p>
+<hr>
+<h2>15. Homework</h2>
+<ol>
+<li><strong>Complete the Values Traceability Audit worksheet.</strong></li>
+<li><strong>Write VYRO&#39;s complete Foundational Identity Document</strong>, using the template — mission, vision, traced core values, organizational structure, and a fully categorized service offerings catalog.</li>
+</ol>
+<p>Deliverable format: one document containing the Values Traceability Audit and the complete Foundational Identity Document — this becomes the first half of Lesson 14.2&#39;s full VYRO Business Blueprint homework.</p>
+<hr>
+<h2>16. Manager Coaching Notes</h2>
+<p><strong>Purpose of this lesson in the employee&#39;s development:</strong> This lesson tests genuine synthesis — whether an employee can look back across the entire academy and articulate what VYRO actually stands for and how it&#39;s structured, rather than writing generic business-identity language. Managers should evaluate the values statement with particular scrutiny for traceability.</p>
+<p><strong>Discussion questions to ask in review:</strong></p>
+<ul>
+<li>&quot;Pick one of your core values — walk me through exactly which lesson and practice it traces back to.&quot;</li>
+<li>&quot;Why did you distinguish your mission and vision the way you did — what would be lost if they were combined into one statement?&quot;</li>
+<li>&quot;How does your organizational structure prevent the coordination failures we discussed in Phase 11?&quot;</li>
+</ul>
+<p><strong>Expected answers:</strong> A proficient employee can trace every value specifically and confidently, clearly articulates why mission and vision serve different purposes, and connects their structural design directly to Phase 11&#39;s coordination principles.</p>
+<p><strong>Coaching tips:</strong></p>
+<ul>
+<li>If any value can&#39;t be traced to a specific practice, have the employee either cut it or revise it live, in the room, until it passes the traceability test.</li>
+<li>If the service catalog is presented as an undifferentiated list, work through categorization together before accepting the homework.</li>
+</ul>
+<p><strong>Common employee mistakes to watch for:</strong></p>
+<ul>
+<li>Generic, untraceable core values.</li>
+<li>Mission and vision statements that are functionally identical.</li>
+<li>Service catalogs with no clear organizational structure.</li>
+</ul>
+<p><strong>Evaluation checklist:</strong> see Grading Rubric (Section 20).</p>
+<hr>
+<h2>18. Practical Exercise</h2>
+<p><strong>Exercise: Rapid Identity Draft</strong></p>
+<p>Manager provides a time constraint and asks the employee to draft a complete mission statement, vision statement, and three traced core values within 20 minutes, without prior preparation.</p>
+<p>Evaluation focus: specificity of the mission/vision distinction and genuine traceability of the values under time pressure.</p>
+<hr>
+<h2>19. Role-Play Exercise</h2>
+<p><strong>Scenario:</strong> You&#39;re presenting VYRO&#39;s foundational identity document to a new hire orientation session (played by your manager as a skeptical new employee).</p>
+<p><strong>Manager&#39;s role-play brief:</strong> After hearing the values, ask, &quot;these sound like values any company would claim — what actually makes them true here?&quot; Push for specific evidence.</p>
+<p><strong>What &quot;good&quot; looks like:</strong> The employee responds by walking through the Values-to-Practice Traceability for at least two values with real specificity, demonstrating the values are genuinely earned rather than aspirational marketing language.</p>
+<hr>
+<h2>20. Grading Rubric</h2>
+<p>Scored out of 100.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Points</th>
+<th>Exemplary (full points)</th>
+<th>Proficient</th>
+<th>Developing</th>
+<th>Needs Improvement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research</td>
+<td>10</td>
+<td>Foundational Identity Document draws genuinely and specifically on real academy content</td>
+<td>Minor gaps</td>
+<td>Thin connection to academy content</td>
+<td>Not connected to real academy content</td>
+</tr>
+<tr>
+<td>Business Understanding</td>
+<td>10</td>
+<td>Correctly distinguishes mission from vision, and structures the org chart per Phase 11 logic</td>
+<td>Minor gaps</td>
+<td>Frequent confusion</td>
+<td>Concepts not understood</td>
+</tr>
+<tr>
+<td>Commercial Strategy</td>
+<td>10</td>
+<td>Service catalog is complete, well-categorized, and reflects VYRO&#39;s real scope of work</td>
+<td>Mostly complete</td>
+<td>Some gaps</td>
+<td>Catalog incomplete or disorganized</td>
+</tr>
+<tr>
+<td>Critical Thinking</td>
+<td>10</td>
+<td>All core values pass the Traceability Audit with genuine, specific connections</td>
+<td>Mostly traceable</td>
+<td>Some untraceable values</td>
+<td>Values largely untraceable</td>
+</tr>
+<tr>
+<td>Communication</td>
+<td>10</td>
+<td>Identity Document is clear, concise, and professionally presentable</td>
+<td>Minor organization issues</td>
+<td>Hard to follow in places</td>
+<td>Disorganized</td>
+</tr>
+<tr>
+<td>Professionalism</td>
+<td>10</td>
+<td>On time, correctly formatted, ready for manager review</td>
+<td>Minor formatting issues</td>
+<td>Notable gaps</td>
+<td>Unprofessional or incomplete</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>10</td>
+<td>Role-play defends values traceability specifically and convincingly</td>
+<td>Mostly specific</td>
+<td>Vague under challenge</td>
+<td>Cannot defend traceability</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>10</td>
+<td>Mission, vision, and values are internally consistent with each other and with academy content</td>
+<td>1–2 inconsistencies</td>
+<td>3–4 inconsistencies</td>
+<td>Largely inconsistent</td>
+</tr>
+<tr>
+<td>Application</td>
+<td>10</td>
+<td>Rapid Identity Draft completed accurately within time limit</td>
+<td>Mostly accurate</td>
+<td>Several gaps under time pressure</td>
+<td>Unable to complete under time pressure</td>
+</tr>
+<tr>
+<td>Overall Quality</td>
+<td>10</td>
+<td>Publish-ready for LMS with no manager edits</td>
+<td>Minor edits needed</td>
+<td>Substantial rework needed</td>
+<td>Does not meet bar</td>
+</tr>
+</tbody></table>
+<p><strong>Minimum passing score for this lesson: 75/100.</strong></p>
+<hr>
+<h2>21. Reflection Questions</h2>
+<ol>
+<li>Which core value was hardest to trace to a specific academy practice, and what did that difficulty teach you?</li>
+<li>How did writing VYRO&#39;s mission and vision change your own understanding of what you&#39;re actually working toward?</li>
+<li>Why do you think most companies&#39; stated values fail the traceability test in practice?</li>
+<li>Looking at your organizational structure design, where do you think the biggest coordination risk would emerge as VYRO scales, and why?</li>
+</ol>
+<hr>
+<h2>22. Recommended Reading</h2>
+<ul>
+<li>General resources on writing effective mission and vision statements, read specifically to compare against the specificity standard in this lesson</li>
+<li>Any resource discussing the difference between &quot;aspirational&quot; and &quot;actually lived&quot; corporate values, to reinforce the Traceability framework</li>
+<li>General resources on organizational design for professional services or agency businesses, to ground the Structure Scaling Model in broader industry practice</li>
+</ul>
+<hr>
+<h2>23. Key Takeaways</h2>
+<ul>
+<li>A mission describes present purpose; a vision describes future aspiration — the two should be distinct and specific, not interchangeable.</li>
+<li>Core values are only meaningful if they trace to real, specific practices — untraceable values are generic corporate language, not genuine principles.</li>
+<li>Organizational structure should reflect consistent functional logic (prospecting/closing, relationship management, activation) regardless of company size, per Phase 11.</li>
+<li>A strong service catalog is categorized and specific, reflecting VYRO&#39;s actual, full scope of work as introduced in this academy&#39;s foundational brief.</li>
+<li>This lesson&#39;s Foundational Identity Document is the first half of the complete VYRO Business Blueprint — Lesson 14.2 builds the operating systems layer on top of it.</li>
+</ul>
+<hr>
+<p><strong>Next in Phase 14:</strong> Lesson 14.2 — Operating Systems &amp; Business Blueprint (draft pending your review of this lesson).</p>
+</article>
+    <section class="quiz" aria-label="Knowledge Check">
+    <div class="quiz-head">
+      <span class="quiz-eyebrow">Knowledge Check</span>
+      <h2 class="quiz-title">Test What You Just Learned</h2>
+    </div>
+    <div class="quiz-questions"><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q1</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">The key distinction between a mission and a vision statement is:</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Mission is future-oriented, vision is present-tense</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Mission describes present purpose, vision describes future aspiration</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">They are interchangeable terms for the same statement</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Vision statements are always shorter than mission statements</span></button></div>
+        </div><div class="quiz-q quiz-q-mc">
+          <div class="quiz-q-head"><span class="quiz-q-num">Q2</span><span class="quiz-q-type">Multiple Choice</span></div>
+          <p class="quiz-q-text">A strong core value for VYRO should:</p>
+          <div class="quiz-options"><button type="button" class="quiz-option" data-letter="A" data-correct="false"><span class="quiz-option-letter">A</span><span class="quiz-option-text">Be generic enough to apply to any company in any industry</span></button><button type="button" class="quiz-option" data-letter="B" data-correct="true"><span class="quiz-option-letter">B</span><span class="quiz-option-text">Trace to a specific, real practice taught in this academy</span></button><button type="button" class="quiz-option" data-letter="C" data-correct="false"><span class="quiz-option-letter">C</span><span class="quiz-option-text">Never be tested against actual behavior</span></button><button type="button" class="quiz-option" data-letter="D" data-correct="false"><span class="quiz-option-letter">D</span><span class="quiz-option-text">Focus exclusively on financial performance</span></button></div>
+        </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q3</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Why does organizational structure need a consistent underlying functional logic even as it scales from a small team to a mature one?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that the underlying functions (prospecting/closing, relationship management, activation) remain necessary regardless of company size — only the degree of specialization changes, and maintaining consistent logic prevents the coordination failures identified in Phase 11.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q4</span><span class="quiz-q-type">Short Answer</span></div>
+        <p class="quiz-q-text">Why is an untraceable core value considered a weakness rather than just an aspirational statement?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>covers that a value with no connection to real, specific practice provides no actual behavioral guidance and reads as generic corporate language rather than something that genuinely shapes decisions.</div>
+      </div><div class="quiz-q quiz-q-open">
+        <div class="quiz-q-head"><span class="quiz-q-num">Q5</span><span class="quiz-q-type">Applied</span></div>
+        <p class="quiz-q-text">You're drafting a core value around "transparency," but can't immediately think of a specific practice it traces to. What should you do?</p>
+        <textarea class="quiz-textarea" rows="3" placeholder="Type your answer..."></textarea>
+        <button type="button" class="quiz-reveal-btn">Show Expected Answer</button>
+        <div class="quiz-expected" hidden>should identify the need to either find a genuine, specific traceable practice (e.g., Phase 07's Floor-Anchor-Ceiling transparency in valuation, or Phase 01's plain-language compensation explanation) or revise/replace the value if no real connection exists — never leave a value stated without real traceability.</div>
+      </div></div>
+    <div class="quiz-footer">
+      <div class="quiz-score">Multiple choice score: <span class="quiz-score-val">0</span> / 2</div>
+      <div class="quiz-passing"><strong>Passing score:</strong> 4 of 5 correct, with Questions 3 and 4 answered with full reasoning.</div>
+    </div>
+  </section>
+    <div class="pagenav">
+      <a class="pagenav-link prev" href="p13-cert.html"><span class="pagenav-dir">← Previous</span><span class="pagenav-title">Certification</span></a>
+      <a class="pagenav-link next" href="p14-l2.html"><span class="pagenav-dir">Next →</span><span class="pagenav-title">Lesson 14.2</span></a>
+    </div>
+  </main>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-head">
+        <span class="sidebar-title">Course Contents</span>
+        <button class="menu-toggle menu-toggle-close" id="menuCloseBtn" aria-label="Close navigation">✕</button>
+      </div>
+      <div class="nav-scroll"><a class="nav-item nav-home" href="index.html">Overview</a><details class="nav-group">
+        <summary><span class="nav-phase-num">01</span><span class="nav-phase-title">How Commercial Partnerships Actually Work</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p01-l1.html">Lesson 1.1</a><a class="nav-item" href="p01-l2.html">Lesson 1.2</a><a class="nav-item" href="p01-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">02</span><span class="nav-phase-title">The Language of Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p02-l1.html">Lesson 2.1</a><a class="nav-item" href="p02-l2.html">Lesson 2.2</a><a class="nav-item" href="p02-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">03</span><span class="nav-phase-title">Study Real Commercial Partnerships</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p03-l1.html">Lesson 3.1</a><a class="nav-item" href="p03-l2.html">Lesson 3.2</a><a class="nav-item" href="p03-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">04</span><span class="nav-phase-title">Professional Sales</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p04-l1.html">Lesson 4.1</a><a class="nav-item" href="p04-l2.html">Lesson 4.2</a><a class="nav-item" href="p04-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">05</span><span class="nav-phase-title">Marketing</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p05-l1.html">Lesson 5.1</a><a class="nav-item" href="p05-l2.html">Lesson 5.2</a><a class="nav-item" href="p05-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">06</span><span class="nav-phase-title">Commercial Assets</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p06-l1.html">Lesson 6.1</a><a class="nav-item" href="p06-l2.html">Lesson 6.2</a><a class="nav-item" href="p06-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">07</span><span class="nav-phase-title">Sponsorship Valuation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p07-l1.html">Lesson 7.1</a><a class="nav-item" href="p07-l2.html">Lesson 7.2</a><a class="nav-item" href="p07-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">08</span><span class="nav-phase-title">Sponsorship Packages</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p08-l1.html">Lesson 8.1</a><a class="nav-item" href="p08-l2.html">Lesson 8.2</a><a class="nav-item" href="p08-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">09</span><span class="nav-phase-title">Partnership Activation</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p09-l1.html">Lesson 9.1</a><a class="nav-item" href="p09-l2.html">Lesson 9.2</a><a class="nav-item" href="p09-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">10</span><span class="nav-phase-title">Client Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p10-l1.html">Lesson 10.1</a><a class="nav-item" href="p10-l2.html">Lesson 10.2</a><a class="nav-item" href="p10-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">11</span><span class="nav-phase-title">Commercial Rights Management</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p11-l1.html">Lesson 11.1</a><a class="nav-item" href="p11-l2.html">Lesson 11.2</a><a class="nav-item" href="p11-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">12</span><span class="nav-phase-title">Business Development</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p12-l1.html">Lesson 12.1</a><a class="nav-item" href="p12-l2.html">Lesson 12.2</a><a class="nav-item" href="p12-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">13</span><span class="nav-phase-title">Finance</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p13-l1.html">Lesson 13.1</a><a class="nav-item" href="p13-l2.html">Lesson 13.2</a><a class="nav-item" href="p13-cert.html">Certification</a></div>
+      </details><details class="nav-group" open>
+        <summary><span class="nav-phase-num">14</span><span class="nav-phase-title">Building VYRO</span></summary>
+        <div class="nav-items"><a class="nav-item active" href="p14-l1.html">Lesson 14.1</a><a class="nav-item" href="p14-l2.html">Lesson 14.2</a><a class="nav-item" href="p14-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">15</span><span class="nav-phase-title">Executive Leadership</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p15-l1.html">Lesson 15.1</a><a class="nav-item" href="p15-l2.html">Lesson 15.2</a><a class="nav-item" href="p15-cert.html">Certification</a></div>
+      </details><details class="nav-group">
+        <summary><span class="nav-phase-num">16</span><span class="nav-phase-title">Capstone Project</span></summary>
+        <div class="nav-items"><a class="nav-item" href="p16-brief.html">Brief + Stage 16.1</a><a class="nav-item" href="p16-stage-2.html">Stage 16.2</a><a class="nav-item" href="p16-stage-3.html">Stage 16.3</a><a class="nav-item" href="p16-stage-4.html">Stage 16.4</a><a class="nav-item" href="p16-stage-5.html">Stage 16.5</a><a class="nav-item" href="p16-certification.html">Graduation</a></div>
+      </details></div>
+    </div>
+  </nav>
+</div>
+</div>
+<script>
+var menuBtn = document.getElementById('menuToggle');
+var closeBtn = document.getElementById('menuCloseBtn');
+function openMenu(){ document.getElementById('sidebar').classList.add('open'); document.body.classList.add('menu-open'); }
+function closeMenu(){ document.getElementById('sidebar').classList.remove('open'); document.body.classList.remove('menu-open'); }
+menuBtn.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+document.querySelectorAll('.sidebar .nav-item').forEach(function(a){
+  a.addEventListener('click', closeMenu);
+});
+document.querySelectorAll('.doc pre, .doc table').forEach(function(el){
+  var wrap = el.tagName === 'TABLE' ? el : el;
+  function check(){
+    if (wrap.scrollWidth > wrap.clientWidth + 2) wrap.classList.add('has-overflow');
+    else wrap.classList.remove('has-overflow');
+  }
+  check();
+  window.addEventListener('resize', check);
+  wrap.addEventListener('scroll', function(){
+    var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+    wrap.classList.toggle('scrolled-end', atEnd);
+  });
+});
+document.querySelectorAll('.quiz-q-mc').forEach(function(q){
+  var quizEl = q.closest('.quiz');
+  var scoreEl = quizEl ? quizEl.querySelector('.quiz-score-val') : null;
+  q.querySelectorAll('.quiz-option').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (q.classList.contains('answered')) return;
+      q.classList.add('answered');
+      var correct = btn.getAttribute('data-correct') === 'true';
+      btn.classList.add(correct ? 'correct' : 'incorrect');
+      if (!correct) {
+        var correctBtn = q.querySelector('[data-correct="true"]');
+        if (correctBtn) correctBtn.classList.add('reveal-correct');
+      } else if (scoreEl) {
+        scoreEl.textContent = String(Number(scoreEl.textContent) + 1);
+      }
+      q.querySelectorAll('.quiz-option').forEach(function(b){ b.disabled = true; });
+    });
+  });
+});
+document.querySelectorAll('.quiz-reveal-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var box = btn.nextElementSibling;
+    var hidden = box.hasAttribute('hidden');
+    if (hidden) { box.removeAttribute('hidden'); btn.textContent = 'Hide Expected Answer'; }
+    else { box.setAttribute('hidden',''); btn.textContent = 'Show Expected Answer'; }
+  });
+});
+</script>
+</body>
+</html>
