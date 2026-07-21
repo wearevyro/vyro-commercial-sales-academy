@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Review Quiz · VYRO Commercial Sales Academy</title>
+<meta name="description" content="25-question program review quiz across all 16 phases of the VYRO Commercial Sales Academy — a presenter-ready deck for live review calls.">
+<style>
+  :root{
+    --navy-deep:#12203F; --navy:#1B2A56; --ink:#16213D;
+    --gold:#E6B347; --gold-soft:rgba(230,179,71,.14);
+    --cream:#FFFFFF; --ice:#CADCFC; --mute:#8A97B8;
+    --line:rgba(202,220,252,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--navy-deep); color:var(--cream);
+    overflow:hidden; -webkit-font-smoothing:antialiased;
+  }
+  .serif{font-family:Georgia,"Times New Roman",serif}
+
+  .stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  .slide{
+    position:absolute;inset:0;display:none;flex-direction:column;
+    padding:clamp(28px,6vw,90px);
+    opacity:0;transition:opacity .45s ease;
+  }
+  .slide.active{display:flex;opacity:1}
+
+  /* decorative orbs */
+  .orb{position:absolute;border-radius:50%;background:var(--navy);z-index:0;pointer-events:none}
+  .orb.a{width:46vmax;height:46vmax;top:-22vmax;left:-16vmax}
+  .orb.b{width:38vmax;height:38vmax;bottom:-20vmax;right:-14vmax}
+  .slide > *{position:relative;z-index:1}
+
+  /* ---- title / closing ---- */
+  .center{align-items:center;justify-content:center;text-align:center}
+  .eyebrow{
+    color:var(--gold);font-size:clamp(12px,1.4vw,16px);font-weight:700;
+    letter-spacing:.28em;text-transform:uppercase;margin-bottom:22px;
+  }
+  .title-main{
+    font-size:clamp(40px,8vw,86px);font-weight:700;line-height:1.02;letter-spacing:-.02em;
+  }
+  .title-sub{color:var(--ice);font-size:clamp(15px,2.1vw,22px);margin-top:26px}
+  .hint{color:var(--mute);font-style:italic;font-size:clamp(12px,1.5vw,15px);margin-top:8vh}
+
+  /* ---- question layout ---- */
+  .q-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .pill{
+    display:inline-block;background:var(--gold);color:var(--navy-deep);
+    font-size:clamp(11px,1.3vw,14px);font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    padding:9px 18px;border-radius:999px;
+  }
+  .q-body{display:flex;align-items:center;gap:clamp(24px,4vw,60px);flex:1}
+  .badge{
+    flex:0 0 auto;width:clamp(96px,13vw,190px);height:clamp(96px,13vw,190px);
+    border-radius:50%;border:2px solid var(--gold);background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-family:Georgia,serif;font-weight:700;color:var(--gold);
+    font-size:clamp(44px,7vw,100px);line-height:1;
+  }
+  .q-text{
+    font-size:clamp(26px,4.6vw,60px);font-weight:700;line-height:1.1;letter-spacing:-.015em;max-width:16ch;
+  }
+  .q-meta{color:var(--mute);font-size:clamp(11px,1.3vw,14px);font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-top:auto}
+
+  /* ---- reveal answer ---- */
+  .answer{
+    margin-top:26px;padding:20px 24px;border-left:3px solid var(--gold);
+    background:var(--gold-soft);border-radius:0 12px 12px 0;max-width:60ch;
+    font-size:clamp(15px,2vw,22px);line-height:1.4;color:var(--cream);
+    display:none;
+  }
+  .answer.show{display:block;animation:rise .35s ease}
+  .answer b{color:var(--gold);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.72em;display:block;margin-bottom:6px}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  /* ---- chrome ---- */
+  .bar{position:fixed;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.06);z-index:20}
+  .bar > i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s ease}
+  .nav{position:fixed;bottom:22px;right:26px;display:flex;gap:10px;z-index:20}
+  .nav button{
+    width:46px;height:46px;border-radius:50%;border:1px solid var(--line);
+    background:rgba(255,255,255,.04);color:var(--cream);font-size:20px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;transition:.18s;
+  }
+  .nav button:hover{background:var(--gold);color:var(--navy-deep);border-color:var(--gold)}
+  .counter{position:fixed;bottom:30px;left:26px;color:var(--mute);font-size:13px;letter-spacing:.1em;z-index:20}
+  .counter b{color:var(--cream)}
+  .brandmark{position:fixed;top:24px;right:28px;color:var(--mute);font-size:12px;letter-spacing:.12em;text-transform:uppercase;z-index:20}
+  .reveal-tip{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);color:var(--mute);font-size:12px;z-index:20;letter-spacing:.04em}
+  .reveal-tip kbd{background:rgba(255,255,255,.08);border:1px solid var(--line);border-radius:5px;padding:2px 7px;color:var(--ice);font-family:inherit;font-size:11px}
+  @media(max-width:640px){
+    .q-body{flex-direction:column;align-items:flex-start}
+    .nav{bottom:16px;right:16px}.counter{bottom:22px}
+  }
+</style>
+</head>
+<body>
+<div class="brandmark">VYRO · Commercial Sales Academy</div>
+<div class="stage" id="stage"></div>
+
+<div class="counter"><b id="cur">1</b> / <span id="tot">27</span></div>
+<div class="reveal-tip">Press <kbd>A</kbd> to reveal answer · <kbd>←</kbd> <kbd>→</kbd> to navigate</div>
+<div class="nav">
+  <button id="prev" aria-label="Previous">‹</button>
+  <button id="next" aria-label="Next">›</button>
+</div>
+<div class="bar"><i id="fill"></i></div>
+
+<script>
+const Q = [
+  ["Foundations","What best describes a Rights Holder?","An organization that owns the underlying asset — audience, venue, or IP — being commercialized."],
+  ["Foundations","How is VYRO classified in the ecosystem?","A Commercial Rights Company."],
+  ["Foundations","How is VYRO's compensation earned?","Through revenue VYRO generates for the Rights Holder that would not otherwise exist."],
+  ["Foundations","Which tier puts the brand's name directly into the property's name?","Title Sponsor."],
+  ["Foundations","What does CPM measure?","Cost per thousand impressions."],
+  ["Analysis & Prospecting","Which peer most often absorbs financial risk via a guaranteed rights fee?","Learfield."],
+  ["Analysis & Prospecting","What does the “T” in F.A.T.N. stand for?","Timing."],
+  ["Analysis & Prospecting","What is the correct order of the Discovery Question Ladder?","Situation → Problem → Implication → Need-payoff."],
+  ["Analysis & Prospecting","In the A-C-R-C framework, what does “Clarify” accomplish?","It uncovers what's really behind a stated objection."],
+  ["Marketing & Assets","Which objective is sponsorship weakest at without an activation or conversion layer?","Customer Acquisition."],
+  ["Marketing & Assets","What is the “Rights Layer Stack”?","The multiple distinct commercial rights that can attach to a single physical asset at the same time."],
+  ["Marketing & Assets","Sharing personally identifiable fan data with a sponsor without legal clearance is…?","Red — not offerable."],
+  ["Valuation & Packaging","How should a final valuation be presented?","As a Floor–Anchor–Ceiling range."],
+  ["Valuation & Packaging","What is the correct package pricing approach?","Sum of assets, minus a bundle discount, plus a separately quantified exclusivity premium where applicable."],
+  ["Valuation & Packaging","What does the Ladder Principle Test ask?","Whether a brand could explain in one sentence why a higher tier is worth more than the one below it."],
+  ["Activation & Account Mgmt","When should activation planning begin?","Before the deal closes."],
+  ["Activation & Account Mgmt","What is the correct reporting cadence for a partnership term?","Early check-in, mid-term report, and end-of-term report."],
+  ["Activation & Account Mgmt","When should renewal planning begin?","At T-90 days."],
+  ["Activation & Account Mgmt","What are the four steps of the Issue Resolution Protocol, in order?","Acknowledge, Investigate, Resolve, Follow Up."],
+  ["Strategy & Finance","What should a credible multi-year revenue forecast separate?","Contracted, expected-renewal, and new-business revenue."],
+  ["Strategy & Finance","Which revenue model has the highest upside but lowest cash-flow predictability?","Revenue Share."],
+  ["Strategy & Finance","How is profit margin calculated?","Gross revenue minus delivery cost and overhead allocation."],
+  ["Executive","Mission vs. vision — what is the key distinction?","Mission describes present purpose; vision describes future aspiration."],
+  ["Executive","What are the four components of the Executive Decision Framework?","Strategic Fit, Risk Exposure, Reversibility, Resource Cost."],
+  ["Executive","What should the Executive Communication Pyramid lead with?","The conclusion/recommendation first, then key evidence, with detail in reserve."]
+];
+
+const stage = document.getElementById('stage');
+const slides = [];
+function add(html, cls){ const d=document.createElement('div'); d.className='slide '+(cls||''); d.innerHTML=html; stage.appendChild(d); slides.push(d); }
+
+// title
+add(`<div class="orb a"></div><div class="orb b"></div>
+  <div class="eyebrow">VYRO Commercial Sales Academy</div>
+  <h1 class="title-main serif">Program<br>Review Quiz</h1>
+  <div class="title-sub">25 Questions · All 16 Phases · Live Review Call</div>
+  <div class="hint">Read each question aloud — give the team a moment, then press A to reveal the answer.</div>`, 'center');
+
+// questions
+Q.forEach(([phase,q,a],i)=>{
+  add(`<div class="orb a"></div>
+    <div class="q-top"><span class="pill">${phase}</span></div>
+    <div class="q-body">
+      <div class="badge serif">${i+1}</div>
+      <div>
+        <div class="q-text serif">${q}</div>
+        <div class="answer"><b>Answer</b>${a}</div>
+      </div>
+    </div>
+    <div class="q-meta">Question ${i+1} of 25</div>`);
+});
+
+// closing
+add(`<div class="orb b"></div>
+  <h1 class="title-main serif">That's a wrap.</h1>
+  <div class="title-sub" style="color:var(--gold)">25 questions · 16 phases · Great work, team.</div>`, 'center');
+
+let idx=0;
+const fill=document.getElementById('fill'), cur=document.getElementById('cur');
+document.getElementById('tot').textContent=slides.length;
+function show(n){
+  idx=Math.max(0,Math.min(slides.length-1,n));
+  slides.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  fill.style.width=((idx)/(slides.length-1)*100)+'%';
+  cur.textContent=idx+1;
+}
+function toggleAnswer(){
+  const a=slides[idx].querySelector('.answer');
+  if(a) a.classList.toggle('show');
+}
+document.getElementById('next').onclick=()=>show(idx+1);
+document.getElementById('prev').onclick=()=>show(idx-1);
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(idx+1);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(idx-1);}
+  else if(e.key.toLowerCase()==='a'){e.preventDefault();toggleAnswer();}
+  else if(e.key==='Home'){show(0);}
+  else if(e.key==='End'){show(slides.length-1);}
+});
+// touch swipe
+let x0=null;
+document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+document.addEventListener('touchend',e=>{
+  if(x0===null)return; const dx=e.changedTouches[0].clientX-x0;
+  if(Math.abs(dx)>50) show(idx+(dx<0?1:-1)); x0=null;
+},{passive:true});
+show(0);
+</script>
+</body>
+</html>
